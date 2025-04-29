@@ -1,0 +1,51 @@
+.logs {
+  margin: 116.75px auto 148px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.learn {
+  margin-left: 104px;
+  margin-right: 104px;
+  margin-bottom: 102px;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .logs {
+    margin-top: 72px !important;
+    margin-bottom: 0 !important;
+    margin-left: 24px !important;
+  }
+  .learn {
+    display: block !important;
+    margin: 72px auto !important;
+  }
+  .learn .photo {
+    width: 100% !important;
+    margin-bottom: 56px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .learn .data {
+    width: 100% !important;
+    padding: 0 20px !important;
+    margin: auto;
+  }
+  .learn .data h1 {
+    font-size: 30px !important;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+  .learn .photo img {
+    width: 311px !important;
+  }
+  .photo2 {
+    right: 16px !important;
+    top: 16px !important;
+  }
+}
+
+.learn .data h1 {
+  line-height: 100%;
+  color: #152c5b;
+}
