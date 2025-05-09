@@ -5,26 +5,26 @@
   <div class="flex-1 ml-[16px] mr-[24px] data">
     <div class="flex justify-between font-[inter]">
       <p
-        class="rounded-[4px] bg-[#C8A45D] text-[white] pt-[4px] pb-[4px] pr-[12px] pl-[12px] mt-[10px] cursor-pointer"
+        class="rounded-[4px] bg-Perimum text-[white] pt-[4px] pb-[4px] pr-[12px] pl-[12px] mt-[10px] cursor-pointer"
       >
         {{ Feature().type }}
       </p>
 
       <i
-        class="pi pi-heart mt-[14px] text-[#243543] cursor-pointer text-[16px]"
+        class="pi pi-heart mt-[14px] text-heartColor cursor-pointer text-[16px]"
       ></i>
     </div>
     <div
-      class="font-[inter] mt-[20px] font-semibold text-[20px] text-[#1B2534]"
+      class="font-[inter] mt-[20px] font-semibold text-[20px] text-featurePrimaryText"
     >
       {{ Feature().name }}
     </div>
-    <div class="text-[#737680] font-[inter] font-[14px] mt-[10px]">
+    <div class="text-featureSecondText font-[inter] font-[14px] mt-[10px]">
       <i class="pi pi-map-marker"></i>
       <p class="inline ml-[8px]">{{ Feature().loc }}</p>
     </div>
     <div
-      class="font-[inter] text-[#737680] text-[14px] flex gap-[16px] font-normal mt-[20px] leading-[16px]"
+      class="font-[inter] text-featureSecondText text-[14px] flex gap-[16px] font-normal mt-[20px] leading-[16px]"
     >
       <div class="">
         <svg
@@ -105,11 +105,11 @@
       </div>
     </div>
     <div class="flex gap-[12px] font-[inter] mt-[20px]">
-      <p class="text-[#1B2534] font-bold text-[20px] leading-[24px]">
+      <p class="text-featurePrimaryText font-bold text-[20px] leading-[24px]">
         {{ Feature().price }}
       </p>
       <p
-        class="text-[14px] text-[#878787] line-through leading-[24px] align-baseline"
+        class="text-[14px] text-fourthText line-through leading-[24px] align-baseline"
       >
         {{ Feature().dis }}
       </p>
@@ -117,7 +117,7 @@
     <div class="font-[inter] text-right text-white mt-[7px View">
       <a
         href=""
-        class="bg-[#220054] pl-[20px] pr-[19px] pt-[12px] pb-[12px] rounded-[8px]"
+        class="bg-Primary pl-[20px] pr-[19px] pt-[12px] pb-[12px] rounded-[8px]"
         >View Details</a
       >
     </div>

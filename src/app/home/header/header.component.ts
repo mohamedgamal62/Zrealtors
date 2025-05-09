@@ -27,7 +27,7 @@ interface name {
     Slider,
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
@@ -35,11 +35,11 @@ export class HeaderComponent {
   cities: name[] | undefined;
   Category: name[] | undefined;
   Price: name[] | undefined;
-  value1: string = 'New York';
-  value2: string = 'New York';
-  value3: string = 'New York';
+  value1: string | null = 'null';
+  value2: string | null = 'null';
+  value3: any | null = 'null';
   selectedText: string | null = 'Find a Property';
-  rangeValues: number[] = [6.5, 100];
+  rangeValues: number[] = [6500, 15000];
   ngOnInit() {
     this.items = [
       {
@@ -82,11 +82,21 @@ export class HeaderComponent {
     ];
     this.Price = [
       { name: '$6,500 - $15,000' },
-      { name: '$15,000 - $20,000 ' },
+      { name: '$15,000 - $20,000' },
       { name: '$20,000 - $30,000' },
       { name: '$30,000 - $40,000' },
       { name: '$40,000 - $50,000' },
       { name: '$50,000 - $100,000' },
     ];
+  }
+  updateSliderFromSelect() {
+    if (this.value3.name) {
+      const match = this.value3.name.match(/\$([\d,]+)\s*-\s*\$([\d,]+)/);
+      if (match) {
+        const min = parseInt(match[1].replace(/,/g, ''));
+        const max = parseInt(match[2].replace(/,/g, ''));
+        this.rangeValues = [min, max];
+      }
+    }
   }
 }

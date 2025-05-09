@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './feature.component.html',
-  styleUrl: './feature.component.css',
+  styleUrls: ['./feature.component.scss'],
 })
 export class FeatureComponent {
   Feature = input.required<Feature>();

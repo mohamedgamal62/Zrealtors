@@ -12,7 +12,7 @@ interface date {
   standalone: true,
   imports: [CommonModule],
   templateUrl: './date.component.html',
-  styleUrl: './date.component.css',
+  styleUrls: ['./date.component.scss'],
 })
 export class DateComponent {
   date = input.required<date>();

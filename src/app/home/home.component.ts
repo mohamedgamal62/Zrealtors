@@ -20,6 +20,6 @@ import { NewsComponent } from './news/news.component';
     FooterComponent,
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {}

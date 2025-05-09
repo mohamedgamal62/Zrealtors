@@ -32,7 +32,7 @@ function checkPasswords(controlName1: string, controlName2: string) {
     Dialog,
   ],
   templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.css',
+  styleUrls: ['./sign-up.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class SignUpComponent {
@@ -77,32 +77,38 @@ export class SignUpComponent {
   visible: boolean = false;
   already: boolean = false;
   router = inject(Router);
+
   Done() {
-    if (
-      this.form.valid &&
-      this.usersService.allUsers().find((user) => {
-        return user.number != this.form.controls.mobile.value;
-      })
-    ) {
+    const mobileValue = this.form.controls.mobile.value;
+    const userExists = this.usersService
+      .allUsers()
+      .find((user) => user.number == mobileValue);
+
+    if (userExists) {
+      this.already = true;
+      this.invalid = false;
+      this.visible = false;
+      return;
+    }
+
+    if (this.form.valid) {
       this.usersService.addUser(
         this.form.controls.name.value,
-        this.form.controls.mobile.value,
+        mobileValue,
         this.form.controls.email.value,
         this.form.get('passwords')?.get('create')?.value
       );
       this.visible = true;
-    }
-    if (
-      this.usersService.allUsers().find((user) => {
-        return user.number == this.form.controls.mobile.value;
-      })
-    ) {
-      this.already = true;
+      this.invalid = false;
+      this.already = false;
     } else {
       this.invalid = true;
+      this.already = false;
+      this.visible = false;
     }
   }
+
   handleClose() {
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
   }
 }
