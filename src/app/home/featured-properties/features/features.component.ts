@@ -7,7 +7,7 @@ import { FeatureComponent } from "../feature/feature.component";
   standalone: true,
   imports: [FeatureComponent],
   templateUrl: './features.component.html',
-  styleUrl: './features.component.css',
+  styleUrls: ['./features.component.scss'],
 })
 export class FeaturesComponent {
   Features = features;

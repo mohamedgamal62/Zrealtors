@@ -17,7 +17,7 @@ import { Dialog } from 'primeng/dialog';
     Dialog,
   ],
   templateUrl: './sign-in.component.html',
-  styleUrl: './sign-in.component.css',
+  styleUrls: ['./sign-in.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class SignInComponent {
@@ -45,7 +45,7 @@ export class SignInComponent {
     ) {
       this.visible = true;
       setTimeout(() => {
-        this.router.navigate(['']);
+        this.router.navigate(['/']);
       }, 1000);
     } else {
       this.NotFound = true;

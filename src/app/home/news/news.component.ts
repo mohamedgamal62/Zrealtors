@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { DatesComponent } from "./dates/dates.component";
+import { DatesComponent } from './dates/dates.component';
 
 @Component({
   selector: 'app-news',
   standalone: true,
   imports: [DatesComponent],
   templateUrl: './news.component.html',
-  styleUrl: './news.component.css'
+  styleUrls: ['./news.component.scss'],
 })
-export class NewsComponent {
-
-}
+export class NewsComponent {}
