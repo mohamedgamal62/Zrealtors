@@ -24,6 +24,7 @@ module.exports = {
         footerBg: "#330066",
         footerIconBg: "#663366",
         footerActiveIconBg: "#cc9966",
+        jimmy: "#000000"
       },
     },
   },
