@@ -1,8 +1,3 @@
-:root {
-  --p-inputtext-border-color: none !important;
-  --p-inputtext-shadow: none !important;
-  --p-inputtext-padding-y: none !important;
-}
 .p-inputtext {
   font-size: 14px !important;
   color: #152c5b !important;
@@ -10,10 +5,10 @@
   height: 48px !important;
   padding-left: 20px !important;
   font-size: 14px !important;
-  color: #152c5b !important;
   border-radius: 8px !important;
   width: 370px !important;
 }
+
 @media (max-width: 768px) {
   .p-inputtext {
     width: 300px !important;
@@ -22,16 +17,26 @@
 p-password.ng-invalid.ng-touched input {
   background-color: #fbdcd6 !important;
 }
+
 input.ng-invalid.ng-touched {
   background-color: #fbdcd6 !important;
 }
+
 input {
   background-color: transparent !important;
 }
 
 input:-webkit-autofill {
   background-color: transparent !important;
-  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
   box-shadow: 0 0 0px 1000px white inset !important;
   -webkit-text-fill-color: black !important;
 }
+
+@media (max-width: 320px) {
+  form {
+    width: 200px !important;
+  }
+  .p-inputtext {
+    width: 200px !important;
+  }
+}/*# sourceMappingURL=sign-up.component.css.map */

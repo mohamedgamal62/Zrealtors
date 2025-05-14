@@ -1,4 +1,4 @@
-<div class="bg-[#330066] text-[#ffffff] font-[inter] font-[400]">
+<div class="bg-purple-100 text-white font-inter font-[400]">
   <div
     class="m-auto flex justify-center pt-[81px] pb-[56px] max-xl:flex-col max-xl:pl-[24px] max-xl:pr-[24px]"
   >
@@ -10,10 +10,10 @@
       <div class="flex gap-[12px] mt-[24px]">
         @for (icon of icons ; track icon) {
         <button
-          class="bg-[#663366] rounded-full w-[40px] h-[40px] transition-colors duration-300"
+          class="bg-purple-200 rounded-full w-[40px] h-[40px] transition-colors duration-3000"
           (click)="selectIcon(icon)"
           [ngClass]="{
-            'bg-[#cc9966] ': selectedIcon === icon,
+            'bg-footer-active-icon': selectedIcon === icon,
           }"
         >
           <i [class]="icon"></i>
@@ -49,7 +49,7 @@
         <div
           class="w-[45px] h-[45px] rounded-[10px] bg-white flex justify-center items-center"
         >
-          <i class="pi pi-chevron-up text-[#220054]"></i>
+          <i class="pi pi-chevron-up text-purple"></i>
         </div>
       </div>
     </div>
@@ -57,10 +57,10 @@
 </div>
 
 <div
-  class="bg-[#220054] flex font-[inter] text-[14px] text-[#ffffff] pt-[28px] pb-[28px] items-center relative max-xl:flex-col"
+  class="bg-purple flex font-inter text-[14px] text-white pt-[28px] pb-[28px] items-center relative max-xl:flex-col"
 >
   <p class="font-[500] max-lg:pt-[49px] max-lg:pl-[24px] max-lg:mr-auto">
-    &#64;2022 <span class="text-[#cc9966]">Zrealtors.</span> All rights
+    &#64;2022 <span class="text-footer-active-icon">Zrealtors.</span> All rights
     reserved.
   </p>
   <div

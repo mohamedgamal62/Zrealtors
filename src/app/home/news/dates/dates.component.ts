@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DateComponent } from "./date/date.component";
+import { DateComponent } from './date/date.component';
 let dates = [
   {
     day: '30',
@@ -36,7 +36,7 @@ let dates = [
   standalone: true,
   imports: [DateComponent],
   templateUrl: './dates.component.html',
-  styleUrl: './dates.component.css',
+  styleUrls: ['./dates.component.scss'],
 })
 export class DatesComponent {
   dates = dates;

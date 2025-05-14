@@ -2,9 +2,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
 import { BadgeModule } from 'primeng/badge';
-
 import { CommonModule } from '@angular/common';
-
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FloatLabel } from 'primeng/floatlabel';
@@ -27,19 +25,17 @@ interface name {
     Slider,
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  styleUrls: ['./header.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
   items: MenuItem[] | undefined;
   cities: name[] | undefined;
-  Category: name[] | undefined;
-  Price: name[] | undefined;
-  value1: string = 'New York';
-  value2: string = 'New York';
-  value3: string = 'New York';
+  category: name[] | undefined;
+  locationValue: string | null = 'cairo';
+  categoryValue: string | null = 'Category1';
   selectedText: string | null = 'Find a Property';
-  rangeValues: number[] = [6.5, 100];
+  rangeValues: number[] = [6500, 15000];
   ngOnInit() {
     this.items = [
       {
@@ -72,21 +68,13 @@ export class HeaderComponent {
       { name: 'Istanbul' },
       { name: 'Paris' },
     ];
-    this.Category = [
+    this.category = [
       { name: 'Category1' },
       { name: 'Category2 ' },
       { name: 'Category3' },
       { name: 'Category4' },
       { name: 'Category5' },
       { name: 'Category6' },
-    ];
-    this.Price = [
-      { name: '$6,500 - $15,000' },
-      { name: '$15,000 - $20,000 ' },
-      { name: '$20,000 - $30,000' },
-      { name: '$30,000 - $40,000' },
-      { name: '$40,000 - $50,000' },
-      { name: '$50,000 - $100,000' },
     ];
   }
 }

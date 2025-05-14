@@ -24,18 +24,18 @@
     </ng-template>
     <ng-template #end class="max-sm:hidden">
       <div class="flex items-center gap-2 cursor-pointer">
-        <i class="pi pi-user text-white" [routerLink]="['Sig-up']"></i>
-        <a href="" [routerLink]="['Sig-up']">Log-in</a>
+        <i class="pi pi-user text-white" [routerLink]="['Sig-in']"></i>
+        <a href="" [routerLink]="['Sig-in']">Log-in</a>
       </div>
     </ng-template>
   </p-menubar>
-  <div class="FindProperty">
+  <div class="find-property">
     <div class="bg-white flex m-auto find">
-      <div class="w-1/2 box1 h-full overflow-hidden">
+      <div class="w-1/2 property h-full overflow-hidden">
         <div
           class="flex justify-center items-center h-full transition-all duration-300"
           [ngClass]="{
-            'bg-[#220054]': selectedText === 'Find a Property',
+            'bg-purple': selectedText === 'Find a Property',
             'bg-white text-black': selectedText !== 'Find a Property'
           }"
           (click)="selectedText = 'Find a Property'"
@@ -44,11 +44,11 @@
           <p class="ml-2">Find a Property</p>
         </div>
       </div>
-      <div class="w-1/2 box2 overflow-hidden">
+      <div class="w-1/2 request overflow-hidden">
         <div
           class="flex justify-center items-center h-full transition-all duration-300"
           [ngClass]="{
-            'bg-[#220054]': selectedText === 'Make a Request',
+            'bg-purple': selectedText === 'Make a Request',
             'bg-white text-black': selectedText !== 'Make a Request'
           }"
           (click)="selectedText = 'Make a Request'"
@@ -59,10 +59,10 @@
       </div>
     </div>
     <div class="category m-auto bg-white">
-      <div class="coverselect flex">
+      <div class="cover-select flex">
         <p-floatlabel class="w-full md:w-56 bg-white" variant="in">
           <p-select
-            [(ngModel)]="value1"
+            [(ngModel)]="locationValue"
             inputId="in_label"
             [options]="cities"
             optionLabel="name"
@@ -72,15 +72,15 @@
             class="bord"
           />
 
-          <label for="in_label" class=""
+          <label for="in_label"
             ><i class="pi pi-map-marker mr-1"></i>Location</label
           >
         </p-floatlabel>
-        <p-floatlabel class="try" variant="in">
+        <p-floatlabel variant="in">
           <p-select
-            [(ngModel)]="value2"
+            [(ngModel)]="categoryValue"
             inputId="in_label"
-            [options]="Category"
+            [options]="category"
             optionLabel="name"
             styleClass="w-full"
             variant="filled"
@@ -89,20 +89,14 @@
           />
           <label for="in_label"><i class="pi pi-home mr-1"></i>Category</label>
         </p-floatlabel>
-        <p-floatlabel class="w-full md:w-56" variant="in">
-          <p-select
-            [(ngModel)]="value3"
-            inputId="in_label"
-            [options]="Price"
-            optionLabel="name"
-            styleClass="w-full"
-            variant="filled"
-            placeholder="$6,500 - $15,000"
-          />
-          <label for="in_label">
-            <i class="pi pi-dollar mr-1"></i>Price Range</label
-          >
-        </p-floatlabel>
+        <div class="w-[240px] ml-[12px]">
+          <p class="text-blue-100 text-[22px] font-[600]">
+            <i class="pi pi-dollar mr-1"></i>Price Range
+          </p>
+          <p class="text-gray mt-[5px]">
+            ${{ rangeValues[0] }} - ${{ rangeValues[1] }}
+          </p>
+        </div>
         <button class="search">
           <i class="pi pi-search text-2xl"></i>
         </button>
@@ -110,9 +104,18 @@
     </div>
     <div class="range">
       <div class="bg-black block mr-4 number">${{ rangeValues[0] }}</div>
-      <p-slider [(ngModel)]="rangeValues" [range]="true" styleClass="w-56" />
+      <p-slider
+        [(ngModel)]="rangeValues"
+        [range]="true"
+        styleClass="w-56"
+        max="100000"
+        min="0"
+        step="500"
+      />
       <div class="bg-black block ml-4 number">${{ rangeValues[1] }}</div>
     </div>
   </div>
-  <div class="arrow"><i class="pi pi-angle-down text-2xl"></i></div>
+  <div class="arrow">
+    <i class="pi pi-angle-down text-2xl"></i>
+  </div>
 </main>

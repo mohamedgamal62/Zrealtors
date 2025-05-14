@@ -2,3 +2,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+:root {
+  --p-menubar-background: black;
+  --p-menubar-item-focus-background: transparent !important;
+  --p-menubar-mobile-button-hover-background: transparent !important;
+  --p-menubar-padding: 40px 0 0.75rem 0.75rem !important;
+  --p-select-background: red !important;
+  --p-select-color: #777e90 !important;
+  --p-select-placeholder-color: #777e90 !important;
+  --p-select-dropdown-color: #777e90 !important;
+  --p-select-border: none !important;
+  --p-floatlabel-active-color: #1b2534 !important;
+  --p-floatlabel-active-font-size: 22px !important;
+  --p-select-option-selected-focus-color: none !important;
+  --p-select-option-selected-focus-background: none !important;
+  --p-floatlabel-focus-color: #1b2534 !important;
+  --p-select-option-selected-background: none !important;
+  --p-select-option-selected-color: #777e90 !important;
+  --p-menubar-mobile-button-focus-ring-shadow: none !important;
+  --p-focus-ring-shadow: none !important;
+  --p-focus-ring-color: transparent !important;
+  --p-select-border-color: none !important;
+  --p-select-border-radius: none !important;
+  --p-slider-track-background: #eeeeee !important;
+  --p-slider-track-size: 5px !important;
+  --p-slider-range-background: #220054 !important;
+  --p-slider-handle-width: 18px !important;
+  --p-slider-handle-height: 18px !important;
+  --p-slider-handle-content-width: 10px !important;
+  --p-slider-handle-content-height: 10px !important;
+  --p-slider-handle-background: #220054 !important;
+  --p-slider-handle-focus-ring-color: none !important;
+  --p-inputtext-border-color: none !important;
+  --p-inputtext-shadow: none !important;
+  --p-inputtext-padding-y: none !important;
+}/*# sourceMappingURL=styles.css.map */
