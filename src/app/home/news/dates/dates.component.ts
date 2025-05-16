@@ -36,7 +36,6 @@ let dates = [
   standalone: true,
   imports: [DateComponent],
   templateUrl: './dates.component.html',
-  styleUrls: ['./dates.component.scss'],
 })
 export class DatesComponent {
   dates = dates;

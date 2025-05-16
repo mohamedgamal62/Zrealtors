@@ -10,5 +10,5 @@ import { FeatureComponent } from "../feature/feature.component";
   styleUrls: ['./features.component.scss'],
 })
 export class FeaturesComponent {
-  Features = features;
+  features = features;
 }

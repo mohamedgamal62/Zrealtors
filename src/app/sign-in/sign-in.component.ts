@@ -33,7 +33,7 @@ export class SignInComponent {
   notFound: boolean = false;
   visible: boolean = false;
   router = inject(Router);
-  Done() {
+  logIn() {
     if (
       this.form.valid &&
       this.usersService.allUsers().find((user) => {

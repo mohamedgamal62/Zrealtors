@@ -6,15 +6,9 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  icons = [
-    'fa-brands fa-facebook-f ',
-    'fa-brands fa-twitter',
-    'fa-brands fa-linkedin-in',
-    'fa-brands fa-instagram',
-  ];
+  icons = ['fa-facebook-f ', 'fa-twitter', 'fa-linkedin-in', 'fa-instagram'];
 
   selectedIcon: string | null = this.icons[0];
   selectIcon(icon: string) {

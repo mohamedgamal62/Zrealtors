@@ -61,6 +61,7 @@ export class SignUpComponent {
             Validators.required,
             Validators.maxLength(40),
             Validators.minLength(8),
+            Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/),
           ],
         }),
         confirm: new FormControl('', {
@@ -82,7 +83,7 @@ export class SignUpComponent {
   already: boolean = false;
   router = inject(Router);
 
-  Done() {
+  signUp() {
     const mobileValue = this.form.controls.mobile.value;
     const userExists = this.usersService
       .allUsers()

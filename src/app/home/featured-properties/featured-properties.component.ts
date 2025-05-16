@@ -6,6 +6,5 @@ import { FeaturesComponent } from './features/features.component';
   standalone: true,
   imports: [FeaturesComponent],
   templateUrl: './featured-properties.component.html',
-  styleUrls: ['./featured-properties.component.scss'],
 })
 export class FeaturedPropertiesComponent {}

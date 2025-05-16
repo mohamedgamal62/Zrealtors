@@ -10,7 +10,7 @@ export interface Feature {
   dis: string;
 }
 
-export let features = [
+export let features: Feature[] = [
   {
     photo: 'feat1.png',
     type: 'Perimum',
