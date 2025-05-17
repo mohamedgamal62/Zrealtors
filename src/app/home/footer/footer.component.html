@@ -9,15 +9,18 @@
       </p>
       <div class="flex gap-[12px] mt-[24px]">
         @for (icon of icons ; track icon) {
-        <button
-          class="bg-purple-200 rounded-full w-[40px] h-[40px] transition-colors duration-3000"
-          (click)="selectIcon(icon)"
-          [ngClass]="{
+        <div class="bg-purple-200 rounded-full">
+          <button
+            class="rounded-full w-[40px] h-[40px] transition-colors duration-3000"
+            (click)="selectIcon(icon)"
+            [ngClass]="{
             'bg-footer-active-icon': selectedIcon === icon,
           }"
-        >
-          <i [class]="icon"></i>
-        </button>
+          >
+            <i class="fa-brands" [class]="icon"></i>
+          </button>
+        </div>
+
         }
       </div>
     </div>
@@ -59,7 +62,9 @@
 <div
   class="bg-purple flex font-inter text-[14px] text-white pt-[28px] pb-[28px] items-center relative max-xl:flex-col"
 >
-  <p class="font-[500] max-lg:pt-[49px] max-lg:pl-[24px] max-lg:mr-auto">
+  <p
+    class="font-[500] md:m-auto max-lg:pt-[49px] max-lg:pl-[24px] max-lg:mr-auto"
+  >
     &#64;2022 <span class="text-footer-active-icon">Zrealtors.</span> All rights
     reserved.
   </p>

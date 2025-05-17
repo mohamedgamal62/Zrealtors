@@ -1,13 +1,13 @@
 <div class="feature bg-white rounded-[20px] flex p-[15px]">
   <div class="w-[270px] h-[240px] rounded-[20px] photo">
-    <img src="{{ Feature().photo }}" alt="" class="w-[100%]" />
+    <img src="{{ feature().photo }}" alt="" class="w-[100%]" />
   </div>
   <div class="flex-1 ml-[16px] mr-[24px] data">
     <div class="flex justify-between font-inter">
       <p
         class="rounded-[4px] bg-gold text-[white] pt-[4px] pb-[4px] pr-[12px] pl-[12px] mt-[10px] cursor-pointer"
       >
-        {{ Feature().type }}
+        {{ feature().type }}
       </p>
 
       <i
@@ -15,11 +15,11 @@
       ></i>
     </div>
     <div class="font-inter mt-[20px] font-semibold text-[20px] text-blue-100">
-      {{ Feature().name }}
+      {{ feature().name }}
     </div>
     <div class="text-gray-100 font-inter font-[14px] mt-[10px]">
       <i class="pi pi-map-marker"></i>
-      <p class="inline ml-[8px]">{{ Feature().loc }}</p>
+      <p class="inline ml-[8px]">{{ feature().loc }}</p>
     </div>
     <div
       class="font-inter text-gray-100 text-[14px] flex gap-[16px] font-normal mt-[20px] leading-[16px]"
@@ -38,7 +38,7 @@
             fill="#47566D"
           />
         </svg>
-        <p class="inline ml-[4px]">{{ Feature().beds }}</p>
+        <p class="inline ml-[4px]">{{ feature().beds }}</p>
       </div>
       <div class="">
         <svg
@@ -74,7 +74,7 @@
             fill="#47566D"
           />
         </svg>
-        <p class="inline ml-[4px]">{{ Feature().baths }}</p>
+        <p class="inline ml-[4px]">{{ feature().baths }}</p>
       </div>
       <div class="">
         <svg
@@ -99,17 +99,17 @@
             </clipPath>
           </defs>
         </svg>
-        <p class="inline ml-[4px]">{{ Feature().sqft }}</p>
+        <p class="inline ml-[4px]">{{ feature().sqft }}</p>
       </div>
     </div>
     <div class="flex gap-[12px] font-inter mt-[20px]">
       <p class="text-blue-100 font-bold text-[20px] leading-[24px]">
-        {{ Feature().price }}
+        {{ feature().price }}
       </p>
       <p
         class="text-[14px] text-gray-400 line-through leading-[24px] align-baseline"
       >
-        {{ Feature().dis }}
+        {{ feature().dis }}
       </p>
     </div>
     <div class="font-inter text-right text-white mt-[7px] view">

@@ -46,7 +46,7 @@ module.exports = {
       },
       fontFamily: {
         pt: ["PT Sans", "sans-serif"],
-        inter: ['"Inter"', "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
     },
   },

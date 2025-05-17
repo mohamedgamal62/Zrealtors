@@ -6,6 +6,5 @@ import { DatesComponent } from './dates/dates.component';
   standalone: true,
   imports: [DatesComponent],
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss'],
 })
 export class NewsComponent {}

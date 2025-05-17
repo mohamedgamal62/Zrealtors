@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./feature.component.scss'],
 })
 export class FeatureComponent {
-  Feature = input.required<Feature>();
+  feature = input.required<Feature>();
 }

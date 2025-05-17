@@ -8,14 +8,14 @@
     <form
       [formGroup]="form"
       class="font-inter w-[370px] max-md:w-[300px]"
-      (submit)="Done()"
+      (submit)="signUp()"
     >
       <h4 class="text-[24px] font-bold text-blue">Sign up</h4>
       <p class="text-gray-300 text-[14px] font-[500] mt-[15px]">
         Enter details to create your account
       </p>
       <div class="flex flex-col mt-[36px] gap-[24px]">
-        <div class="flex flex-col gap-[10px]">
+        <div class="flex flex-col gap-[10px] relative">
           <label for="name" class="text-[12px] text-gray font-[500]"
             >Name</label
           >
@@ -28,14 +28,16 @@
           />
           @if (form.controls.name.invalid && form.controls.name.touched) { @if
           (form.controls.name.errors?.['required']) {
-          <span class="text-error text-[12px]">Name is required</span>
+          <span class="text-error text-[12px] absolute bottom-[-20px]"
+            >Name is required</span
+          >
           } @if (form.controls.name.errors?.['minlength']) {
-          <span class="text-error text-[12px]"
+          <span class="text-error text-[12px] absolute bottom-[-20px]"
             >Name must be at least 8 characters long</span
           >
           } }
         </div>
-        <div class="flex flex-col gap-[10px]">
+        <div class="flex flex-col gap-[10px] relative">
           <label for="num" class="text-[12px] text-gray font-[500]"
             >Mobile Number</label
           >
@@ -50,15 +52,17 @@
           />
           @if (form.controls.mobile.invalid && form.controls.mobile.touched) {
           @if (form.controls.mobile.errors?.['required']) {
-          <span class="text-error text-[12px]">Mobile number is required</span>
+          <span class="text-error text-[12px] absolute bottom-[-20px]"
+            >Mobile number is required</span
+          >
           } @if (form.controls.mobile.errors?.['minlength']
           ||form.controls.mobile.errors?.['pattern'] ) {
-          <span class="text-error text-[12px]"
+          <span class="text-error text-[12px] absolute bottom-[-20px]"
             >Enter a valid phone number (10-15 digits)</span
           >
           } }
         </div>
-        <div class="flex flex-col gap-[10px]">
+        <div class="flex flex-col gap-[10px] relative">
           <label for="email" class="text-[12px] text-gray font-[500]"
             >Email address
           </label>
@@ -71,18 +75,17 @@
           />
           @if (form.controls.email.invalid && form.controls.email.touched) { @if
           (form.controls.email.errors?.['required']) {
-          <span class="text-error text-[12px]">Email address is required</span>
-          } @if (form.controls.email.errors?.['minlength'] ) {
-          <span class="text-error text-[12px]"
-            >Please enter a valid email address</span
+          <span class="text-error text-[12px] absolute bottom-[-20px]"
+            >Email address is required</span
           >
-          }@if (form.controls.email.errors?.['email']) {
-          <span class="text-error text-[12px]"
-            >Email must contain "&#64;" and a valid format</span
+          } @if (form.controls.email.errors?.['email'] ||
+          form.controls.email.errors?.['minlength']) {
+          <span class="text-error text-[12px] absolute bottom-[-20px]"
+            >Enter a valid email with "&#64;" and at least 8 characters</span
           >} }
         </div>
-        <div class="flex flex-col gap-[24px]" formGroupName="passwords">
-          <div class="flex flex-col gap-[10px]">
+        <div class="flex flex-col gap-[35px]" formGroupName="passwords">
+          <div class="flex flex-col gap-[10px] relative">
             <label class="text-[12px] text-gray font-[500]"
               >Create Password
             </label>
@@ -94,17 +97,19 @@
             @if ( form.controls.passwords.get('create')?.invalid &&
             form.controls.passwords.get('create')?.touched) { @if
             (form.controls.passwords.get('create')?.errors?.['required']) {
-            <span class="text-error text-[12px]"
+            <span class="text-error text-[12px] absolute bottom-[-20px]"
               >Create Password is required</span
             >
-            } @if (form.controls.passwords.get('create')?.errors?.['minlength'])
-            {
-            <span class="text-error text-[12px]"
-              >Password should be at least 8 characters</span
-            >
+            } @if (form.controls.passwords.get('create')?.errors?.['minlength']
+            || form.controls.passwords.get('create')?.errors?.['pattern'] ) {
+            <span
+              class="text-error text-[12px] absolute bottom-[-35px] max-md:leading-[1]"
+              >Password should be at least 8 characters long and include at
+              least one uppercase letter, one lowercase letter, and one number
+            </span>
             } }
           </div>
-          <div class="flex flex-col gap-[10px]">
+          <div class="flex flex-col gap-[10px] relative">
             <label class="text-[12px] text-gray font-[500]"
               >Confirm Password
             </label>
@@ -115,32 +120,39 @@
             />
             @if ( form.controls.passwords.get('confirm')?.invalid &&
             form.controls.passwords.get('confirm')?.touched &&
-            form.controls.passwords.get('create')?.errors?.['required']) {
-            <span class="text-error text-[12px]"
-              >Confirm Password is required</span
+            form.controls.passwords.get('create')?.errors?.['required'] ||
+            form.controls.passwords.errors?.['check'] ) {
+            <span class="text-error text-[12px] absolute bottom-[-20px]"
+              >Passwords do not match</span
             >
             }
           </div>
-          @if ( form.controls.passwords.errors?.['check'] &&
-          form.controls.passwords.invalid ) {
-          <span class="text-error text-[12px]">Passwords do not match</span>
-          }
         </div>
       </div>
-      <button
-        type="submit"
-        class="mt-[28px] bg-purple rounded-[8px] text-[14px] font-[600] text-white h-[48px] w-full"
-        label="show"
-      >
-        Create an Account
-      </button>
-      @if (invalid == true) {
-      <p class="text-error text-center mt-[5px]">
-        Invalid form , Please check your input data.
-      </p>
-      } @if (already == true) {
-      <p class="text-error text-center mt-[5px]">You already have an account</p>
-      }
+      <div class="relative">
+        <button
+          type="submit"
+          class="mt-[28px] bg-purple rounded-[8px] text-[14px] font-[600] text-white h-[48px] w-full"
+          label="show"
+        >
+          Create an Account
+        </button>
+
+        @if (invalid == true) {
+        <p
+          class="text-error text-center mt-[5px] absolute bottom-[-25px] max-md:leading-[.8] max-md:bottom-[-30px]"
+        >
+          Invalid form , Please check your input data
+        </p>
+        } @if (already == true) {
+        <p
+          class="text-error text-center mt-[5px] absolute bottom-[-25px] max-md:leading-[.8] max-md:bottom-[-30px]"
+        >
+          You already have an account with this number
+        </p>
+        }
+      </div>
+
       <p class="text-gray text-[14px] font-[400] mt-[24px] text-center">
         Already have an account?
         <span

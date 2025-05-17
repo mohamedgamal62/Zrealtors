@@ -31,11 +31,15 @@ interface name {
 export class HeaderComponent {
   items: MenuItem[] | undefined;
   cities: name[] | undefined;
-  category: name[] | undefined;
-  locationValue: string | null = 'cairo';
-  categoryValue: string | null = 'Category1';
+  categorys: name[] | undefined;
+  location: string | null = 'cairo';
+  category: string | null = 'Category1';
   selectedText: string | null = 'Find a Property';
   rangeValues: number[] = [6500, 15000];
+  toggleRange = false;
+  toggle() {
+    this.toggleRange = !this.toggleRange;
+  }
   ngOnInit() {
     this.items = [
       {
@@ -68,7 +72,7 @@ export class HeaderComponent {
       { name: 'Istanbul' },
       { name: 'Paris' },
     ];
-    this.category = [
+    this.categorys = [
       { name: 'Category1' },
       { name: 'Category2 ' },
       { name: 'Category3' },
