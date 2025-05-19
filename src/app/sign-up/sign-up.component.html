@@ -1,0 +1,144 @@
+<div class="flex">
+  <div class="w-1/2 max-md:hidden">
+    <img src="sign-up.png" alt="" class="w-full h-full" />
+  </div>
+  <div
+    class="w-1/2 pt-[52px] pb-[53px] flex justify-center max-md:w-full max-md:p-[24px]"
+  >
+    <form
+      [formGroup]="form"
+      class="font-[inter] w-[370px] max-md:w-[300px]"
+      (submit)="Done()"
+    >
+      <h4 class="text-[24px] font-bold text-[#152C5B]">Sign up</h4>
+      <p class="text-[#48546D] text-[14px] font-[500] mt-[15px]">
+        Enter details to create your account
+      </p>
+      <div class="flex flex-col mt-[36px] gap-[24px]">
+        <div class="flex flex-col gap-[10px]">
+          <label for="name" class="text-[12px] text-[#777E90] font-[500]"
+            >Name</label
+          >
+          <input
+            maxlength="40"
+            type="text"
+            id="name"
+            [formControl]="form.controls.name"
+            class="outline-none border border-[#eeeeee] rounded-[8px] text-[#152C5B] text-[14px] font-[400] pl-[20px] h-[48px]"
+          />
+        </div>
+        <div class="flex flex-col gap-[10px]">
+          <label for="num" class="text-[12px] text-[#777E90] font-[500]"
+            >Mobile Number</label
+          >
+          <input
+            type="tel"
+            pattern="[0-9]*"
+            inputmode="numeric"
+            id="num"
+            [formControl]="form.controls.mobile"
+            class="outline-none border border-[#eeeeee] rounded-[8px] text-[#152C5B] text-[14px] font-[400] pl-[20px] h-[48px]"
+            maxlength="20"
+          />
+        </div>
+        <div class="flex flex-col gap-[10px]">
+          <label for="email" class="text-[12px] text-[#777E90] font-[500]"
+            >Email address
+          </label>
+          <input
+            maxlength="40"
+            type="email"
+            id="email"
+            [formControl]="form.controls.email"
+            class="outline-none border border-[#eeeeee] rounded-[8px] text-[#152C5B] text-[14px] font-[400] pl-[20px] h-[48px]"
+          />
+        </div>
+        <div class="flex flex-col gap-[24px]" formGroupName="passwords">
+          <div class="flex flex-col gap-[10px]">
+            <label class="text-[12px] text-[#777E90] font-[500]"
+              >Create Password
+            </label>
+            <p-password
+              [toggleMask]="true"
+              [feedback]="false"
+              formControlName="create"
+            />
+          </div>
+          <div class="flex flex-col gap-[10px]">
+            <label class="text-[12px] text-[#777E90] font-[500]"
+              >Confirm Password
+            </label>
+            <p-password
+              [toggleMask]="true"
+              [feedback]="false"
+              formControlName="confirm"
+            />
+          </div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="mt-[28px] bg-[#220054] rounded-[8px] text-[14px] font-[600] text-white h-[48px] w-full"
+        label="show"
+      >
+        Create an Account
+      </button>
+      @if (invalid == true) {
+      <p class="text-[#f44336] text-center mt-[5px]">
+        Invalid form , Please check your input data.
+      </p>
+      } @if (already == true) {
+      <p class="text-[#f44336] text-center mt-[5px]">
+        You already have an account
+      </p>
+      }
+      <p class="text-[#777E90] text-[14px] font-[400] mt-[24px] text-center">
+        Already have an account?
+        <span
+          ><a
+            href=""
+            class="text-[#220054] font-bold"
+            [routerLink]="['/Sig-in']"
+            >Sign in</a
+          ></span
+        >
+      </p>
+      <div class="flex gap-[12.5px] justify-center items-center mt-[32px]">
+        <div class="w-[132px] max-md:w-[97px] h-[1px] bg-[#EDEDED]"></div>
+        <div class="text-[#777E90] text-[11px]">Or Sign up with</div>
+        <div class="w-[132px] max-md:w-[97px] h-[1px] bg-[#EDEDED]"></div>
+      </div>
+      <div class="flex gap-[16px] mt-[36px]">
+        <button
+          class="flex justify-center w-1/2 border border-[#eeeeee] h-[48px] items-center rounded-[8px] gap-[8px]"
+        >
+          <img src="Google.png" alt="" />
+          <a class="text-[#152C5B] text-[14px]" href="https://www.google.com/"
+            >Google</a
+          >
+        </button>
+        <button
+          class="flex justify-center w-1/2 border border-[#eeeeee] h-[48px] items-center rounded-[8px] gap-[8px]"
+        >
+          <img src="face.png" alt="" />
+          <a class="text-[#152C5B] text-[14px]" href="https://www.google.com/"
+            >Facebook</a
+          >
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  (onHide)="handleClose()"
+>
+  <ng-template pTemplate="header">
+    <div class="text-[green] m-auto text-[30px] font-bold font-[inter]">
+      Successful Sign-In
+    </div>
+  </ng-template>
+</p-dialog>
