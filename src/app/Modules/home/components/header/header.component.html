@@ -1,0 +1,146 @@
+<main class="pb-[315px] text-white relative">
+  <p-menubar [model]="items">
+    <ng-template #start>
+      <div class="logo"><img src="assets/images/Group 14.png" alt="" /></div>
+    </ng-template>
+    <ng-template #item let-item let-root="root">
+      <a pRipple class="flex items-center p-menubar-item-link">
+        <span>{{ item.label }}</span>
+        @if (item.badge) {
+        <p-badge
+          [ngClass]="{ 'ml-auto': !root, 'ml-2': root }"
+          [value]="item.badge"
+        />
+        } @if (item.shortcut) {
+        <span
+          class="ml-auto border border-surface rounded bg-emphasis text-muted-color text-xs p-1"
+          >{{ item.shortcut }}</span
+        >} @if (item.items) {
+        <i
+          [ngClass]="['ml-auto pi', root ? 'pi-angle-down' : 'pi-angle-right']"
+        ></i
+        >}
+      </a>
+    </ng-template>
+    <ng-template #end class="max-sm:hidden">
+      <div class="flex items-center gap-2 cursor-pointer">
+        <i class="pi pi-user text-white" [routerLink]="['Sig-in']"></i>
+        <a href="" [routerLink]="['Sig-in']">Log-in</a>
+      </div>
+    </ng-template>
+  </p-menubar>
+  <div class="find-property mt-[244px] relative">
+    <div
+      class="bg-white flex m-auto w-[470px] h-[75px] rounded-lg text-[22px] cursor-pointer find"
+    >
+      <div
+        class="w-1/2 property h-full overflow-hidden rounded-tl-lg bg-purple"
+      >
+        <div
+          class="flex justify-center items-center h-full transition-all duration-300"
+          [ngClass]="{
+            'bg-purple': selectedText === 'Find a Property',
+            'bg-white text-black': selectedText !== 'Find a Property'
+          }"
+          (click)="selectedText = 'Find a Property'"
+        >
+          <i class="pi pi-home"></i>
+          <p class="ml-2">Find a Property</p>
+        </div>
+      </div>
+      <div class="w-1/2 request overflow-hidden rounded-tr-lg">
+        <div
+          class="flex justify-center items-center h-full transition-all duration-300"
+          [ngClass]="{
+            'bg-purple': selectedText === 'Make a Request',
+            'bg-white text-black': selectedText !== 'Make a Request'
+          }"
+          (click)="selectedText = 'Make a Request'"
+        >
+          <i class="pi pi-home"></i>
+          <p class="ml-2">Make a Request</p>
+        </div>
+      </div>
+    </div>
+    <div class="category m-auto bg-white w-[954px] rounded-lg">
+      <div class="cover-select flex px-[48px] py-[31px]">
+        <p-floatlabel class="w-full md:w-56 bg-white" variant="in">
+          <p-select
+            [(ngModel)]="location"
+            inputId="in_label"
+            [options]="cities"
+            optionLabel="name"
+            styleClass="w-full"
+            variant="filled"
+            placeholder="cairo"
+            class="bord"
+          />
+
+          <label for="in_label"
+            ><i class="pi pi-map-marker mr-1"></i>Location</label
+          >
+        </p-floatlabel>
+        <p-floatlabel variant="in">
+          <p-select
+            [(ngModel)]="category"
+            inputId="in_label"
+            [options]="categorys"
+            optionLabel="name"
+            styleClass="w-full"
+            variant="filled"
+            placeholder="Property Category"
+            class="bord"
+          />
+          <label for="in_label"><i class="pi pi-home mr-1"></i>Category</label>
+        </p-floatlabel>
+        <div
+          class="w-[240px] ml-[12px] relative cursor-pointer select-none"
+          (click)="toggle()"
+        >
+          <p class="text-blue-100 text-[22px] font-[600]">
+            <i class="pi pi-dollar mr-1"></i>Price Range
+          </p>
+          <p class="text-gray mt-[5px]">
+            ${{ rangeValues[0] }} - ${{ rangeValues[1] }}
+          </p>
+          <i
+            class="pi pi-angle-down text-[20px] text-gray absolute transform -translate-y-1/2 top-[45%] right-[22px]"
+          ></i>
+        </div>
+        <button
+          class="search w-[82px] h-[82px] bg-purple rounded-lg flex justify-center items-center ml-[50px]"
+        >
+          <i class="pi pi-search text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    @if (toggleRange == true) {
+    <div
+      class="range w-[460px] h-[108px] bg-white flex justify-center items-center rounded-b-lg absolute left-1/2 transform -translate-x-[50%]"
+    >
+      <div
+        class="bg-black block mr-4 number bg-purple text-center p-[5px] rounded-lg"
+      >
+        ${{ rangeValues[0] }}
+      </div>
+      <p-slider
+        [(ngModel)]="rangeValues"
+        [range]="true"
+        styleClass="w-56"
+        max="100000"
+        min="0"
+      />
+      <div
+        class="bg-black block ml-4 number bg-purple text-center p-[5px] rounded-lg"
+      >
+        ${{ rangeValues[1] }}
+      </div>
+    </div>
+    }
+  </div>
+  <div
+    class="arrow w-[40px] h-[40px] border-4 border-white rounded-full absolute bottom-0 flex justify-center items-center left-1/2 mb-[80px]"
+  >
+    <i class="pi pi-angle-down text-2xl"></i>
+  </div>
+</main>

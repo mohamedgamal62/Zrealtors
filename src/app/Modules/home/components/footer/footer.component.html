@@ -1,0 +1,77 @@
+<div class="bg-purple-100 text-white font-inter font-[400]">
+  <div
+    class="m-auto flex justify-center pt-[81px] pb-[56px] max-xl:flex-col max-xl:pl-[24px] max-xl:pr-[24px]"
+  >
+    <div class="mr-[94px]">
+      <img src="Group 14.png" alt="" />
+      <p class="text-[14px] w-[220px] leading-[26px] mt-[12.7px]">
+        Zrealtors is the highest rated Shopify expert team in the world.
+      </p>
+      <div class="flex gap-[12px] mt-[24px]">
+        @for (icon of icons ; track icon) {
+        <div class="bg-purple-200 rounded-full">
+          <button
+            class="rounded-full w-[40px] h-[40px] transition-colors duration-3000"
+            (click)="selectIcon(icon)"
+            [ngClass]="{
+            'bg-footer-active-icon': selectedIcon === icon,
+          }"
+          >
+            <i class="fa-brands" [class]="icon"></i>
+          </button>
+        </div>
+
+        }
+      </div>
+    </div>
+    <div
+      class="flex flex-col gap-[24px] mr-[72px] max-xl:mt-[68px] max-xl:mb-[32px]"
+    >
+      <a href="https://www.google.com/" target="_blank">Projects</a>
+      <a href="https://www.google.com/" target="_blank">About Us</a>
+      <a href="https://www.google.com/" target="_blank">Real Estate Guide</a>
+    </div>
+    <div class="flex flex-col gap-[24px] mr-[56px] max-xl:mb-[32px]">
+      <a href="https://www.google.com/" target="_blank">Commercial Services </a>
+      <a href="https://www.google.com/" target="_blank">Partner with us</a>
+      <a href="https://www.google.com/" target="_blank">Contact Us </a>
+    </div>
+    <div class="flex flex-col gap-[24px] mr-[56px]">
+      <a href="https://www.google.com/" target="_blank">Become A Partner </a>
+      <a href="https://www.google.com/" target="_blank"
+        >Reserve Your Property</a
+      >
+    </div>
+    <div class="leading-[28px] flex flex-col gap-[24px] max-xl:mt-[68px]">
+      <p class="w-[226px]">
+        3 Saad area, Menkaure Gate ,Hadayek El ahram, Giza
+      </p>
+      <p>+2002 15732</p>
+      <div class="flex justify-between max-xl:items-end">
+        <p>info&#64;zrealtors.com</p>
+        <div
+          class="w-[45px] h-[45px] rounded-[10px] bg-white flex justify-center items-center"
+        >
+          <i class="pi pi-chevron-up text-purple"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="bg-purple flex font-inter text-[14px] text-white pt-[28px] pb-[28px] items-center relative max-xl:flex-col"
+>
+  <p
+    class="font-[500] md:m-auto max-lg:pt-[49px] max-lg:pl-[24px] max-lg:mr-auto"
+  >
+    &#64;2022 <span class="text-footer-active-icon">Zrealtors.</span> All rights
+    reserved.
+  </p>
+  <div
+    class="flex mr-[104px] gap-[32px] font-[400] absolute right-0 max-lg:left-0 max-lg:pl-[24px]"
+  >
+    <p>Terms & Conditions</p>
+    <p>Privacy</p>
+  </div>
+</div>

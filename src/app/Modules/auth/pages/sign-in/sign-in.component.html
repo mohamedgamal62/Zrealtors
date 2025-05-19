@@ -1,0 +1,110 @@
+<div class="flex h-screen">
+  <div class="w-1/2 max-md:hidden">
+    <img src="assets/images/sign-in.png" alt="" class="w-full h-full" />
+  </div>
+  <div class="w-1/2 m-auto flex justify-center max-md:w-full max-md:p-[24px]">
+    <form
+      [formGroup]="form"
+      class="font-inter w-[370px] max-md:w-[300px]"
+      (submit)="logIn()"
+    >
+      <h4 class="text-[24px] font-bold text-blue">Hi, Welcome Back!</h4>
+      <p class="text-gray-300 text-[14px] font-[500] mt-[15px]">
+        Enter details to sign in
+      </p>
+      <div class="flex flex-col mt-[36px] gap-[24px]">
+        <div class="flex flex-col gap-[10px]">
+          <label for="email" class="text-[12px] text-gray font-[500]"
+            >Email address *
+          </label>
+          <input
+            type="email"
+            id="email"
+            [formControl]="form.controls.email"
+            class="outline-none border border-border rounded-[8px] text-blue text-[14px] font-[400] pl-[20px] h-[48px]"
+          />
+        </div>
+        <div class="flex flex-col gap-[10px]">
+          <label class="text-[12px] text-gray font-[500]"
+            >Create Password
+          </label>
+          <p-password
+            [toggleMask]="true"
+            [feedback]="false"
+            [formControl]="form.controls.Password"
+          />
+        </div>
+      </div>
+      <div class="flex mt-[16px] text-[12px] justify-between font-[500]">
+        <div class="flex gap-[8px]">
+          <input type="checkbox" class="accent-purple" />
+          <p class="text-blue">Remember me</p>
+        </div>
+        <div class="">
+          <button href="" class="text-purple">Forgot password?</button>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="mt-[28px] bg-purple rounded-[8px] text-[14px] font-[600] text-white h-[48px] w-full"
+        label="show"
+      >
+        Sign In
+      </button>
+      <div class="relative">
+        @if(notFound == true) {
+        <p
+          class="text-error text-center mt-[5px] absolute text-[12px] max-md:leading-[.8]"
+        >
+          Please check your email and password and try again.
+        </p>
+        }
+      </div>
+
+      <p class="text-gray text-[14px] font-[400] mt-[24px] text-center">
+        Don't have an account?
+        <span
+          ><a href="" class="text-purple font-bold" [routerLink]="['/Sig-up']"
+            >Sign up</a
+          ></span
+        >
+      </p>
+      <div class="flex gap-[12.5px] justify-center items-center mt-[32px]">
+        <div class="w-[132px] max-md:w-[97px] h-[1px] bg-border-100"></div>
+        <div class="text-gray text-[11px]">Or Sign up with</div>
+        <div class="w-[132px] max-md:w-[97px] h-[1px] bg-border-100"></div>
+      </div>
+      <div class="flex gap-[16px] mt-[36px]">
+        <button
+          class="flex justify-center w-1/2 border border-border h-[48px] items-center rounded-[8px] gap-[8px]"
+        >
+          <img src="assets/images/Google.png" alt="" />
+          <a class="text-blue text-[14px]" href="https://www.google.com/"
+            >Google</a
+          >
+        </button>
+        <button
+          class="flex justify-center w-1/2 border border-border h-[48px] items-center rounded-[8px] gap-[8px]"
+        >
+          <img src="assets/images/face.png" alt="" />
+          <a class="text-blue text-[14px]" href="https://www.google.com/"
+            >Facebook</a
+          >
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<p-dialog
+  [(visible)]="visible"
+  [modal]="true"
+  [style]="{ width: '50rem' }"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  closable="false"
+>
+  <ng-template pTemplate="header">
+    <div class="text-successfully m-auto text-[30px] font-bold font-inter">
+      Welcome back! You’ve successfully logged in
+    </div>
+  </ng-template>
+</p-dialog>

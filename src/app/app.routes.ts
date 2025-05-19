@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { HomeComponent } from './Modules/home/pages/home/home.component';
+import { SignUpComponent } from './Modules/auth/pages/sign-up/sign-up.component';
+import { SignInComponent } from './Modules/auth/pages/sign-in/sign-in.component';
 
 export const routes: Routes = [
   {
@@ -17,3 +17,4 @@ export const routes: Routes = [
     component: SignInComponent,
   },
 ];
+
