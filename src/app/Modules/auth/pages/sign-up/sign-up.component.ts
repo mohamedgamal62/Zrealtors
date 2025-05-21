@@ -11,6 +11,8 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { Dialog } from 'primeng/dialog';
+import { Toast } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 function checkPasswords(controlName1: string, controlName2: string) {
   return (control: AbstractControl) => {
     let val1 = control.get(controlName1)?.value;
@@ -30,10 +32,11 @@ function checkPasswords(controlName1: string, controlName2: string) {
     RouterModule,
     ButtonModule,
     Dialog,
+    Toast,
   ],
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  providers: [MessageService],
 })
 export class SignUpComponent {
   form = new FormGroup({
@@ -78,43 +81,53 @@ export class SignUpComponent {
     ),
   });
   usersService = inject(UsersService);
-  invalid: boolean = false;
   visible: boolean = false;
-  already: boolean = false;
-  router = inject(Router);
 
+  invaildName = true;
+  router = inject(Router);
+  messageService = inject(MessageService);
+  private isUserExists(mobile: string | null) {
+    return this.usersService.allUsers().some((user) => user.number === mobile);
+  }
+  private registerUser() {
+    const mobileValue = this.form.controls.mobile.value;
+    this.usersService.addUser(
+      this.form.controls.name.value,
+      mobileValue,
+      this.form.controls.email.value,
+      this.form.get('passwords')?.get('create')?.value
+    );
+  }
   signUp() {
     const mobileValue = this.form.controls.mobile.value;
-    const userExists = this.usersService
-      .allUsers()
-      .find((user) => user.number == mobileValue);
-
-    if (userExists) {
-      this.already = true;
-      this.invalid = false;
-      this.visible = false;
+    if (this.isUserExists(mobileValue)) {
+      this.already();
       return;
     }
-
     if (this.form.valid) {
-      this.usersService.addUser(
-        this.form.controls.name.value,
-        mobileValue,
-        this.form.controls.email.value,
-        this.form.get('passwords')?.get('create')?.value
-      );
+      this.registerUser();
       this.visible = true;
-      this.invalid = false;
-      this.already = false;
     } else {
-      this.invalid = true;
-      this.already = false;
-      this.visible = false;
+      this.invalid();
     }
   }
-
   handleClose() {
     this.router.navigate(['/']);
   }
-  invaildName = true;
+  invalid() {
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: ' Invalid form , Please check your input data',
+      life: 3000,
+    });
+  }
+  already() {
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'You already have an account with this number',
+      life: 3000,
+    });
+  }
 }

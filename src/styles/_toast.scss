@@ -1,0 +1,14 @@
+@use "../styles/variables" as *;
+
+@media (max-width: 400px) {
+  .p-toast-message {
+    width: 300px !important;
+    margin: auto !important;
+  }
+}
+.p-dialog .p-button-text {
+  color: $successful !important;
+}
+.p-toast .p-button-text {
+  color: $error !important;
+}
