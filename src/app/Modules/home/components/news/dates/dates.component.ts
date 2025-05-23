@@ -1,7 +1,8 @@
-import { Dates } from './../../../interfaces/new-dates.interface';
+
 import { Component } from '@angular/core';
 import { DateComponent } from './date/date.component';
 import { dates } from '../../../constants/news-dates.constant';
+import { Dates } from '../../../interfaces';
 
 @Component({
   selector: 'app-dates',

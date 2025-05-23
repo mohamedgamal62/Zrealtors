@@ -1,4 +1,4 @@
-import { Feature } from '../interfaces/feature.interface';
+import { Feature } from "../interfaces";
 export let features: Feature[] = [
   {
     photo: 'feat1.png',

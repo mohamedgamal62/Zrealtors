@@ -29,6 +29,15 @@
       </div>
     </ng-template>
   </p-menubar>
+  <button
+    (click)="toggleLanguage()"
+    class="flex items-center gap-2 bg-white text-purple border border-purple px-4 py-2 rounded-full shadow-md transition hover:bg-purple hover:text-white absolute left-[20px]"
+  >
+    <i class="pi pi-globe text-[16px]"></i>
+    <span class="font-medium">
+      {{ currentLang === "en" ? "عربي" : "English" }}
+    </span>
+  </button>
   <div class="find-property mt-[244px] relative">
     <div
       class="bg-white flex m-auto w-[470px] h-[75px] rounded-lg text-[22px] cursor-pointer find"

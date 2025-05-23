@@ -1,10 +1,15 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  inject,
+  ViewEncapsulation,
+} from '@angular/core';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
 import { BadgeModule } from 'primeng/badge';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
+import { FormsModule, Validators } from '@angular/forms';
 import { FloatLabel } from 'primeng/floatlabel';
 import { Slider } from 'primeng/slider';
 import { Select } from 'primeng/select';
@@ -37,33 +42,17 @@ export class HeaderComponent {
   selectedText: string | null = 'Find a Property';
   rangeValues: number[] = [6500, 15000];
   toggleRange = false;
+  router = inject(Router);
+  currentLang: 'ar' | 'en' = 'en';
+  toggleLanguage() {
+    this.currentLang = 'en';
+    this.router.navigate(['/ar']);
+  }
   toggle() {
     this.toggleRange = !this.toggleRange;
   }
   ngOnInit() {
-    this.items = [
-      {
-        label: 'Home',
-      },
-      {
-        label: 'About Us',
-      },
-      {
-        label: 'Properties',
-      },
-      {
-        label: 'Projects',
-      },
-      {
-        label: 'Loyalty',
-      },
-      {
-        label: 'Our Partners',
-      },
-      {
-        label: 'Contact Us',
-      },
-    ];
+    this.updateMenuItems();
     this.cities = [
       { name: 'cairo' },
       { name: 'New York' },
@@ -80,5 +69,28 @@ export class HeaderComponent {
       { name: 'Category5' },
       { name: 'Category6' },
     ];
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.updateMenuItems();
+  }
+
+  updateMenuItems() {
+    this.items = [
+      { label: 'Home' },
+      { label: 'About Us' },
+      { label: 'Properties' },
+      { label: 'Projects' },
+      { label: 'Loyalty' },
+      { label: 'Our Partners' },
+      { label: 'Contact Us' },
+    ];
+
+    if (window.innerWidth < 960) {
+      this.items.push({
+        label: 'Log-in',
+        command: () => this.router.navigate(['/Sig-in']),
+      });
+    }
   }
 }
