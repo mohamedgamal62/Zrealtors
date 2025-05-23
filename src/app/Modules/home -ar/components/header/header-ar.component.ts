@@ -17,7 +17,7 @@ interface name {
   name: string;
 }
 @Component({
-  selector: 'app-header',
+  selector: 'app-headerAr',
   standalone: true,
   imports: [
     MenubarModule,
@@ -29,11 +29,11 @@ interface name {
     Select,
     Slider,
   ],
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  templateUrl: './header-ar.component.html',
+  styleUrls: ['./header-ar.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HeaderComponent {
+export class HeaderArComponent {
   items: MenuItem[] | undefined;
   cities: name[] | undefined;
   categorys: name[] | undefined;
@@ -43,10 +43,10 @@ export class HeaderComponent {
   rangeValues: number[] = [6500, 15000];
   toggleRange = false;
   router = inject(Router);
-  currentLang: 'ar' | 'en' = 'en';
+  currentLang: 'ar' | 'en' = 'ar';
   toggleLanguage() {
     this.currentLang = 'en';
-    this.router.navigate(['/ar']);
+    this.router.navigate(['/']);
   }
   toggle() {
     this.toggleRange = !this.toggleRange;
@@ -54,20 +54,21 @@ export class HeaderComponent {
   ngOnInit() {
     this.updateMenuItems();
     this.cities = [
-      { name: 'cairo' },
-      { name: 'New York' },
-      { name: 'Rome' },
-      { name: 'London' },
-      { name: 'Istanbul' },
-      { name: 'Paris' },
+      { name: 'القاهرة' },
+      { name: 'نيويورك' },
+      { name: 'روما' },
+      { name: 'لندن' },
+      { name: 'إسطنبول' },
+      { name: 'باريس' },
     ];
+
     this.categorys = [
-      { name: 'Category1' },
-      { name: 'Category2 ' },
-      { name: 'Category3' },
-      { name: 'Category4' },
-      { name: 'Category5' },
-      { name: 'Category6' },
+      { name: 'الفئة 1' },
+      { name: 'الفئة 2' },
+      { name: 'الفئة 3' },
+      { name: 'الفئة 4' },
+      { name: 'الفئة 5' },
+      { name: 'الفئة 6' },
     ];
   }
   @HostListener('window:resize', ['$event'])
@@ -77,19 +78,19 @@ export class HeaderComponent {
 
   updateMenuItems() {
     this.items = [
-      { label: 'Home' },
-      { label: 'About Us' },
-      { label: 'Properties' },
-      { label: 'Projects' },
-      { label: 'Loyalty' },
-      { label: 'Our Partners' },
-      { label: 'Contact Us' },
+      { label: 'الرئيسية' },
+      { label: 'من نحن' },
+      { label: 'العقارات' },
+      { label: 'المشاريع' },
+      { label: 'الولاء' },
+      { label: 'شركاؤنا' },
+      { label: 'تواصل معنا' },
     ];
 
     if (window.innerWidth < 960) {
       this.items.push({
-        label: 'Log-in',
-        command: () => this.router.navigate(['/Sig-in']),
+        label: 'تسجيل دخول',
+        command: () => this.router.navigate(['/sig-in-ar']),
       });
     }
   }

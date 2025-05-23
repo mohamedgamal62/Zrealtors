@@ -1,4 +1,4 @@
-<main class="pb-[315px] text-white relative">
+<main class="pb-[315px] text-white relative" dir="rtl">
   <p-menubar [model]="items">
     <ng-template #start>
       <div class="logo"><img src="assets/images/Group 14.png" alt="" /></div>
@@ -24,8 +24,8 @@
     </ng-template>
     <ng-template #end class="max-sm:hidden">
       <div class="flex items-center gap-2 cursor-pointer">
-        <i class="pi pi-user text-white" [routerLink]="['Sig-in']"></i>
-        <a href="" [routerLink]="['Sig-in']">Log-in</a>
+        <i class="pi pi-user text-white" [routerLink]="['/sig-in-ar']"></i>
+        <a href="" [routerLink]="['/sig-in-ar']">تسجيل الدخول</a>
       </div>
     </ng-template>
   </p-menubar>
@@ -35,9 +35,10 @@
   >
     <i class="pi pi-globe text-[16px]"></i>
     <span class="font-medium">
-      {{ currentLang === "en" ? "عربي" : "English" }}
+      {{ currentLang === "ar" ? "English" : "عربي" }}
     </span>
   </button>
+
   <div class="find-property mt-[244px] relative">
     <div
       class="bg-white flex m-auto w-[470px] h-[75px] rounded-lg text-[22px] cursor-pointer find"
@@ -54,7 +55,7 @@
           (click)="selectedText = 'Find a Property'"
         >
           <i class="pi pi-home"></i>
-          <p class="ml-2">Find a Property</p>
+          <p class="mr-2">ابحث عن عقار</p>
         </div>
       </div>
       <div class="w-1/2 request overflow-hidden rounded-tr-lg">
@@ -67,7 +68,7 @@
           (click)="selectedText = 'Make a Request'"
         >
           <i class="pi pi-home"></i>
-          <p class="ml-2">Make a Request</p>
+          <p class="mr-2">قدم طلب</p>
         </div>
       </div>
     </div>
@@ -81,12 +82,12 @@
             optionLabel="name"
             styleClass="w-full"
             variant="filled"
-            placeholder="cairo"
+            placeholder="القاهرة"
             class="bord"
           />
 
           <label for="in_label"
-            ><i class="pi pi-map-marker mr-1"></i>Location</label
+            ><i class="pi pi-map-marker ml-1"></i>الموقع</label
           >
         </p-floatlabel>
         <p-floatlabel variant="in">
@@ -97,23 +98,23 @@
             optionLabel="name"
             styleClass="w-full"
             variant="filled"
-            placeholder="Property Category"
+            placeholder="الفئة "
             class="bord"
           />
-          <label for="in_label"><i class="pi pi-home mr-1"></i>Category</label>
+          <label for="in_label"><i class="pi pi-home ml-1"></i>الفئة</label>
         </p-floatlabel>
         <div
           class="w-[240px] ml-[12px] relative cursor-pointer select-none"
           (click)="toggle()"
         >
           <p class="text-blue-100 text-[22px] font-[600]">
-            <i class="pi pi-dollar mr-1"></i>Price Range
+            <i class="pi pi-dollar mr-1"></i> السعر
           </p>
           <p class="text-gray mt-[5px]">
             ${{ rangeValues[0] }} - ${{ rangeValues[1] }}
           </p>
           <i
-            class="pi pi-angle-down text-[20px] text-gray absolute transform -translate-y-1/2 top-[45%] right-[22px]"
+            class="pi pi-angle-down text-[20px] text-gray absolute transform -translate-y-1/2 top-[45%] left-[10px]"
           ></i>
         </div>
         <button

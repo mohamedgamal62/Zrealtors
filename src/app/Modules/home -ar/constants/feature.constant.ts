@@ -1,0 +1,48 @@
+import { Feature } from '../interfaces';
+
+export let features: Feature[] = [
+  {
+    photo: 'feat1.png',
+    type: 'فاخر',
+    name: 'شقة مجددة',
+    loc: 'القاهرة الجديدة، مصر',
+    beds: '4 غرف نوم',
+    baths: '2 حمام',
+    sqft: '2500 قدم²',
+    price: '15,000$',
+    dis: '20,000$',
+  },
+  {
+    photo: 'feat2.png',
+    type: 'فاخر',
+    name: 'شقة مجددة',
+    loc: 'القاهرة الجديدة، مصر',
+    beds: '4 غرف نوم',
+    baths: '2 حمام',
+    sqft: '2500 قدم²',
+    price: '10,000$',
+    dis: '12,000$',
+  },
+  {
+    photo: 'feat3.png',
+    type: 'فاخر',
+    name: 'شقة مجددة',
+    loc: 'القاهرة الجديدة، مصر',
+    beds: '4 غرف نوم',
+    baths: '2 حمام',
+    sqft: '2500 قدم²',
+    price: '5,000$',
+    dis: '8,000$',
+  },
+  {
+    photo: 'feat4.png',
+    type: 'فاخر',
+    name: 'شقة مجددة',
+    loc: 'القاهرة الجديدة، مصر',
+    beds: '4 غرف نوم',
+    baths: '2 حمام',
+    sqft: '2500 قدم²',
+    price: '20,000$',
+    dis: '23,000$',
+  },
+];
