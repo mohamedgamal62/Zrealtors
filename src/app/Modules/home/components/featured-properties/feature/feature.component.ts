@@ -1,6 +1,7 @@
-import { Feature } from './../../../interfaces/feature.interface';
+
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Feature } from '../../../interfaces';
 @Component({
   selector: 'app-feature',
   standalone: true,

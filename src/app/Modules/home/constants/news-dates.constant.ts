@@ -1,4 +1,4 @@
-import { Dates } from './../interfaces/new-dates.interface';
+import { Dates } from '../interfaces';
 
 export let dates: Dates[] = [
   {

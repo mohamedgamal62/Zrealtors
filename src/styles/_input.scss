@@ -1,4 +1,4 @@
-@use "../../../styles/variables" as *;
+@use "../styles/variables" as *;
 .p-inputtext {
   font-size: 14px !important;
   color: $PrimaryText !important;
@@ -13,9 +13,6 @@
   .p-inputtext {
     width: 300px !important;
   }
-}
-p-password.ng-invalid.ng-touched input {
-  background-color: $bg-error !important;
 }
 input.ng-invalid.ng-touched {
   background-color: $bg-error !important;

@@ -1,4 +1,4 @@
-<div class="flex">
+<div class="flex ">
   <div class="w-1/2 max-md:hidden">
     <img src="assets/images/sign-up.png" alt="" class="w-full h-full" />
   </div>
@@ -137,20 +137,6 @@
         >
           Create an Account
         </button>
-
-        @if (invalid == true) {
-        <p
-          class="text-error text-center mt-[5px] absolute bottom-[-25px] max-md:leading-[.8] max-md:bottom-[-30px]"
-        >
-          Invalid form , Please check your input data
-        </p>
-        } @if (already == true) {
-        <p
-          class="text-error text-center mt-[5px] absolute bottom-[-25px] max-md:leading-[.8] max-md:bottom-[-30px]"
-        >
-          You already have an account with this number
-        </p>
-        }
       </div>
 
       <p class="text-gray text-[14px] font-[400] mt-[24px] text-center">
@@ -192,7 +178,7 @@
   [modal]="true"
   [style]="{ width: '50rem' }"
   [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
-  (onHide)="handleClose()"
+  (onHide)="closeAndGoHome()"
 >
   <ng-template pTemplate="header">
     <div class="text-successfully m-auto text-[30px] font-bold font-inter">
@@ -201,3 +187,4 @@
     </div>
   </ng-template>
 </p-dialog>
+<p-toast position="top-center" />
