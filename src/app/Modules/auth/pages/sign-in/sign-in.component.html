@@ -51,16 +51,6 @@
       >
         Sign In
       </button>
-      <div class="relative">
-        @if(notFound == true) {
-        <p
-          class="text-error text-center mt-[5px] absolute text-[12px] max-md:leading-[.8]"
-        >
-          Please check your email and password and try again.
-        </p>
-        }
-      </div>
-
       <p class="text-gray text-[14px] font-[400] mt-[24px] text-center">
         Don't have an account?
         <span
@@ -108,3 +98,4 @@
     </div>
   </ng-template>
 </p-dialog>
+<p-toast position="top-center" />

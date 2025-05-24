@@ -89,10 +89,10 @@ main {
       margin-bottom: 50px;
       .find {
         font-size: 16px !important;
-        width: 327px !important;
+        width: 80% !important;
       }
       .category {
-        width: 327px !important;
+        width: 80% !important;
         border-bottom-left-radius: 8px !important;
         border-bottom-right-radius: 8px !important;
         border-top-left-radius: 0 !important;
@@ -102,6 +102,9 @@ main {
           flex-direction: column !important;
           gap: 32px !important;
           padding: 32px !important;
+          .p-floatlabel {
+            width: 100% !important;
+          }
           .p-select.bord {
             border-bottom: 1px solid #eeeeee !important;
             border-right: none !important;
@@ -116,7 +119,7 @@ main {
         }
       }
       .range {
-        width: 327px !important;
+        width: 100% !important;
         bottom: 15%;
         background-color: transparent;
         .p-slider {
@@ -126,6 +129,12 @@ main {
     }
     .arrow {
       display: none !important;
+    }
+    .select-none {
+      width: 100%;
+      .pi-angle-down {
+        right: 24px;
+      }
     }
   }
 }

@@ -6,6 +6,9 @@ import { Router, RouterModule } from '@angular/router';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { Dialog } from 'primeng/dialog';
+import { Toast } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+
 @Component({
   selector: 'app-sign-up',
   standalone: true,
@@ -15,10 +18,11 @@ import { Dialog } from 'primeng/dialog';
     RouterModule,
     ButtonModule,
     Dialog,
+    Toast,
   ],
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  providers: [MessageService],
 })
 export class SignInComponent {
   form = new FormGroup({
@@ -30,7 +34,6 @@ export class SignInComponent {
     }),
   });
   usersService = inject(UsersService);
-  notFound: boolean = false;
   visible: boolean = false;
   router = inject(Router);
   logIn() {
@@ -48,7 +51,17 @@ export class SignInComponent {
         this.router.navigate(['/']);
       }, 1000);
     } else {
-      this.notFound = true;
+      this.showInvalidFormError();
     }
+  }
+  constructor(private messageService: MessageService) {}
+
+  showInvalidFormError() {
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: ' Please check your email and password and try again.',
+      life: 3000,
+    });
   }
 }
