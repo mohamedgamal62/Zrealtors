@@ -51,12 +51,12 @@ export class SignInComponent {
         this.router.navigate(['/']);
       }, 1000);
     } else {
-      this.invalidForm();
+      this.showInvalidFormError();
     }
   }
   constructor(private messageService: MessageService) {}
 
-  invalidForm() {
+  showInvalidFormError() {
     this.messageService.add({
       severity: 'error',
       summary: 'Error',

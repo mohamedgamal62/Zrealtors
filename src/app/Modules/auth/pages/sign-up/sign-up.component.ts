@@ -101,33 +101,26 @@ export class SignUpComponent {
   signUp() {
     const mobileValue = this.form.controls.mobile.value;
     if (this.isMobileRegistered(mobileValue)) {
-      this.showMobileExistsError();
+      this.showErrorInToaster('You already have an account with this number');
       return;
     }
     if (this.form.valid) {
       this.registerUser();
       this.visible = true;
     } else {
-      this.showInvalidFormError();
+      this.showErrorInToaster('Invalid form , Please check your input data');
     }
   }
-  closeAndGoHome() {
+  GoToHomePage() {
     this.router.navigate(['/']);
   }
-  showInvalidFormError() {
+  showErrorInToaster(errorMassege: string) {
     this.messageService.add({
       severity: 'error',
       summary: 'Error',
-      detail: ' Invalid form , Please check your input data',
-      life: 3000,
-    });
-  }
-  showMobileExistsError() {
-    this.messageService.add({
-      severity: 'error',
-      summary: 'Error',
-      detail: 'You already have an account with this number',
+      detail: errorMassege,
       life: 3000,
     });
   }
 }
+('  Invalid form , Please check your input data');
