@@ -9,12 +9,11 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'Sig-up',
+    path: 'Sign-up',
     component: SignUpComponent,
   },
   {
-    path: 'Sig-in',
+    path: 'Sign-in',
     component: SignInComponent,
   },
 ];
-

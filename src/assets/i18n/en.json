@@ -1,0 +1,160 @@
+{
+  "login": {
+    "welcome": "Hi, Welcome Back!",
+    "enterDetails": "Enter details to sign in",
+    "emailLabel": "Email address *",
+    "passwordLabel": "Create Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "dontHaveAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "orSignUpWith": "Or Sign up with",
+    "loginSuccess": "Welcome back! You’ve successfully logged in",
+    "formInvalid": "Please check your email and password and try again."
+  },
+  "signup": {
+    "title": "Sign up",
+    "subtitle": "Enter details to create your account",
+    "labels": {
+      "name": "Name",
+      "mobile": "Mobile Number",
+      "email": "Email address",
+      "createPassword": "Create Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "nameMinLength": "Name must be at least 8 characters long",
+      "mobileRequired": "Mobile number is required",
+      "mobileInvalid": "Enter a valid phone number (10-15 digits)",
+      "emailRequired": "Email address is required",
+      "emailInvalid": "Enter a valid email with \"@\" and at least 8 characters",
+      "createPasswordRequired": "Create Password is required",
+      "createPasswordInvalid": "Password should be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number",
+      "passwordsDoNotMatch": "Passwords do not match"
+    },
+    "buttons": {
+      "createAccount": "Create an Account",
+      "signIn": "Sign in"
+    },
+    "messages": {
+      "alreadyHaveAccount": "Already have an account?",
+      "orSignUpWith": "Or Sign up with",
+      "successDialogTitle": "Congratulations! Your account has been successfully created. You can now log in.",
+      "error": "error",
+      "mobile_already_registered": "You already have an account with this number",
+      "invalid_form": "Invalid form, please check your input data",
+      "registration_success": "Congratulations! Your account has been successfully created. You can now log in."
+    }
+  },
+  "social": {
+    "google": "Google",
+    "facebook": "Facebook"
+  },
+  "home": {
+    "header": {
+      "menu": {
+        "home": "Home",
+        "about": "About Us",
+        "properties": "Properties",
+        "projects": "Projects",
+        "loyalty": "Loyalty",
+        "partners": "Our Partners",
+        "contact": "Contact Us",
+        "login": "Log In"
+      },
+      "auth": {
+        "login": "Log In"
+      },
+      "propertyTabs": {
+        "findProperty": "Find a Property",
+        "makeRequest": "Make a Request"
+      },
+      "filters": {
+        "location": "Location",
+        "category": "Category",
+        "priceRange": "Price Range",
+        "search": "Search"
+      },
+      "cities": {
+        "cairo": "Cairo",
+        "newYork": "New York",
+        "rome": "Rome",
+        "london": "London",
+        "istanbul": "Istanbul",
+        "paris": "Paris"
+      },
+      "categories": {
+        "category1": "Category1",
+        "category2": "Category2",
+        "category3": "Category3",
+        "category4": "Category4",
+        "category5": "Category5",
+        "category6": "Category6"
+      }
+    },
+    "learn": {
+      "title": "Learn about your home's value and selling options.",
+      "paragraph1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the simply standard dummy text ever dummy text of the printing and typesetting industry.",
+      "paragraph2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the simply standard dummy.",
+      "button": "Read More"
+    },
+    "featured-properties": {
+      "title": "Featured Properties",
+      "description": "Lorem Ipsum is simply dummy text of the printing.",
+      "viewAll": "View All",
+      "feature": {
+        "type": "Premium",
+        "name": "Renovated Apartment",
+        "loc": "New Cairo, Egypt",
+        "beds": "4 Beds",
+        "baths": "2 Baths",
+        "sqft": "2500 Sqft",
+        "button": "View Details"
+      }
+    },
+    "card": {
+      "title": "Looking to Buy a new property or Sell an existing one?",
+      "description": "ZRealtors provides an easy solution!",
+      "button": "Contact Us"
+    },
+    "news": {
+      "news_update": "NEWS UPDATE",
+      "latest_news_expos": "Latest News & Expos",
+      "card": {
+        "location": "Cairo, Egypt",
+        "date": "23 March 2023",
+        "name": "Cityscape Egypt 2022",
+        "description": "This is a brief description of the latest news event happening in Cairo. Stay tuned for more updates.",
+        "button": "Read More >"
+      },
+      "dates": {
+        "data1": "New event in cairo is launching soon",
+        "data2": "The future of investment in the new administrative capital",
+        "data3": "How to invest in new cities",
+        "data4": "New launches in 6 October !!",
+        "mounth": "June"
+      }
+    },
+    "footer": {
+      "description": "Zrealtors is the highest rated Shopify expert team in the world.",
+      "links": {
+        "projects": "Projects",
+        "about_us": "About Us",
+        "real_estate_guide": "Real Estate Guide",
+        "commercial_services": "Commercial Services",
+        "partner_with_us": "Partner with us",
+        "contact_us": "Contact Us",
+        "become_a_partner": "Become A Partner",
+        "reserve_your_property": "Reserve Your Property"
+      },
+      "address": "3 Saad area, Menkaure Gate, Hadayek El ahram, Giza",
+      "phone": "+2002 15732",
+      "email": "info@zrealtors.com",
+      "copyright": "All rights reserved.",
+      "terms": "Terms & Conditions",
+      "privacy": "Privacy"
+    }
+  }
+}

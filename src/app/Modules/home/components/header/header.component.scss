@@ -72,7 +72,8 @@ main {
       }
       .p-iconwrapper {
         position: absolute !important;
-        top: 5px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
       }
       .p-menubar-mobile {
         display: block;
@@ -152,5 +153,24 @@ main {
   main .p-menubar-root-list {
     margin-left: 89px !important;
     margin-right: 215px !important;
+  }
+}
+.rtl {
+  .p-menubar-button {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+  }
+  @media (max-width: 960px) {
+    .select-none .pi-angle-down {
+      left: 19px;
+      right: auto;
+    }
+  }
+
+  @media (min-width: 960px) {
+    main .find-property .category .cover-select .p-floatlabel .p-select.bord {
+      border-left: 1px solid #eeeeee !important;
+      border-right: none !important;
+    }
   }
 }

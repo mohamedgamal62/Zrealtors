@@ -1,0 +1,160 @@
+{
+  "login": {
+    "welcome": "مرحبًا، سعيدون بعودتك!",
+    "enterDetails": "يرجى إدخال التفاصيل لتسجيل الدخول",
+    "emailLabel": "البريد الإلكتروني *",
+    "passwordLabel": "كلمة المرور",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "signIn": "تسجيل الدخول",
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "signUp": "أنشئ حسابًا",
+    "orSignUpWith": "أو قم بالتسجيل عبر",
+    "loginSuccess": "مرحبًا بعودتك! تم تسجيل الدخول بنجاح",
+    "formInvalid": "يرجى التحقق من البريد الإلكتروني وكلمة المرور والمحاولة مرة أخرى."
+  },
+  "signup": {
+    "title": "إنشاء حساب",
+    "subtitle": "أدخل التفاصيل لإنشاء حسابك",
+    "labels": {
+      "name": "الاسم",
+      "mobile": "رقم الجوال",
+      "email": "البريد الإلكتروني",
+      "createPassword": "إنشاء كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور"
+    },
+    "errors": {
+      "nameRequired": "الاسم مطلوب",
+      "nameMinLength": "يجب ألا يقل الاسم عن 8 أحرف",
+      "mobileRequired": "رقم الجوال مطلوب",
+      "mobileInvalid": "يرجى إدخال رقم جوال صحيح (10 إلى 15 رقمًا)",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح يحتوي على \"@\" ولا يقل عن 8 أحرف",
+      "createPasswordRequired": "كلمة المرور مطلوبة",
+      "createPasswordInvalid": "يجب ألا تقل كلمة المرور عن 8 أحرف وتتضمن حرفًا كبيرًا وصغيرًا ورقمًا على الأقل",
+      "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين"
+    },
+    "buttons": {
+      "createAccount": "إنشاء الحساب",
+      "signIn": "تسجيل الدخول"
+    },
+    "messages": {
+      "alreadyHaveAccount": "لديك حساب بالفعل؟",
+      "orSignUpWith": "أو قم بالتسجيل عبر",
+      "successDialogTitle": "تهانينا! تم إنشاء حسابك بنجاح. يمكنك الآن تسجيل الدخول.",
+      "error": "خطأ",
+      "mobile_already_registered": "لديك حساب مسجل بهذا الرقم بالفعل",
+      "invalid_form": "النموذج غير صالح، يرجى التحقق من البيانات المدخلة",
+      "registration_success": "تهانينا! تم إنشاء حسابك بنجاح. يمكنك الآن تسجيل الدخول."
+    }
+  },
+  "social": {
+    "google": "جوجل",
+    "facebook": "فيسبوك"
+  },
+  "home": {
+    "header": {
+      "menu": {
+        "home": "الرئيسية",
+        "about": "من نحن",
+        "properties": "العقارات",
+        "projects": "المشاريع",
+        "loyalty": "الولاء",
+        "partners": "شركاؤنا",
+        "contact": "اتصل بنا",
+        "login": "تسجيل الدخول"
+      },
+      "auth": {
+        "login": "تسجيل الدخول"
+      },
+      "propertyTabs": {
+        "findProperty": "ابحث عن عقار",
+        "makeRequest": "قدم طلب"
+      },
+      "filters": {
+        "location": "الموقع",
+        "category": "الفئة",
+        "priceRange": "السعر",
+        "search": "بحث"
+      },
+      "cities": {
+        "cairo": "القاهرة",
+        "newYork": "نيويورك",
+        "rome": "روما",
+        "london": "لندن",
+        "istanbul": "إسطنبول",
+        "paris": "باريس"
+      },
+      "categories": {
+        "category1": "الفئة ١",
+        "category2": "الفئة ٢",
+        "category3": "الفئة ٣",
+        "category4": "الفئة ٤",
+        "category5": "الفئة ٥",
+        "category6": "الفئة ٦"
+      }
+    },
+    "learn": {
+      "title": "تعرف على قيمة منزلك وخيارات البيع.",
+      "paragraph1": "لوريم إيبسوم هو ببساطة نص شكلي يستخدم في صناعات الطباعة والتنضيد.",
+      "paragraph2": "لوريم إيبسوم هو ببساطة نص شكلي قياسي منذ زمن طويل.",
+      "button": "اقرأ المزيد"
+    },
+    "featured-properties": {
+      "title": "العقارات المميزة",
+      "description": "هذا نص تجريبي بسيط يستخدم في الطباعة.",
+      "viewAll": "عرض الكل",
+      "feature": {
+        "type": "مميز",
+        "name": "شقة مجددة",
+        "loc": "القاهرة الجديدة، مصر",
+        "beds": "٤ غرف نوم",
+        "baths": "٢ حمام",
+        "sqft": "٢٥٠٠ قدم مربع",
+        "button": "تفاصيل"
+      }
+    },
+    "card": {
+      "title": "هل تبحث عن شراء عقار جديد أو بيع عقار قائم؟",
+      "description": "تقدم ZRealtors حلاً سهلاً!",
+      "button": "اتصل بنا"
+    },
+    "news": {
+      "news_update": "تحديث الأخبار",
+      "latest_news_expos": "آخر الأخبار والمعارض",
+      "card": {
+        "location": "القاهرة، مصر",
+        "date": "23 مارس 2023",
+        "name": "سيتي سكيب مصر 2022",
+        "description": "هذا وصف موجز لآخر الأخبار التي تحدث في القاهرة. تابعونا للمزيد من التحديثات.",
+        "button": "اقرأ اكثر"
+      },
+      "dates": {
+        "data1": "حدث جديد في القاهرة يُطلق قريبًا",
+        "data2": "مستقبل الاستثمار في العاصمة الإدارية الجديدة",
+        "data3": "كيفية الاستثمار في المدن الجديدة",
+        "data4": "إطلاقات جديدة في 6 أكتوبر !!",
+        "mounth": "يونيو"
+      }
+    },
+    "footer": {
+      "description": "Zrealtors هو الفريق الأعلى تقييمًا في العالم في خبراء شوبيفاي.",
+      "links": {
+        "projects": "المشاريع",
+        "about_us": "من نحن",
+        "real_estate_guide": "دليل العقارات",
+        "commercial_services": "الخدمات التجارية",
+        "partner_with_us": "شراكة معنا",
+        "contact_us": "اتصل بنا",
+        "become_a_partner": "كن شريكًا",
+        "reserve_your_property": "احجز عقارك"
+      },
+      "address": "منطقة سعد 3، بوابة منكاور، حدائق الأهرام، الجيزة",
+      "phone": "+٢٠٠٢ ١٥٧٣٢",
+      "email": "info@zrealtors.com",
+      "copyright": "كل الحقوق محفوظة.",
+      "terms": "الشروط والأحكام",
+      "privacy": "سياسة الخصوصية"
+    }
+  }
+}
