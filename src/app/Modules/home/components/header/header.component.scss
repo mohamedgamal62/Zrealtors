@@ -79,7 +79,7 @@ main {
         display: block;
       }
       .p-menubar-button {
-        margin-left: auto;
+        margin-inline-start: auto;
       }
       .p-menubar-root-list {
         background-color: #666666 !important;
@@ -156,10 +156,6 @@ main {
   }
 }
 .rtl {
-  .p-menubar-button {
-    margin-right: auto !important;
-    margin-left: 0 !important;
-  }
   @media (max-width: 960px) {
     .select-none .pi-angle-down {
       left: 19px;

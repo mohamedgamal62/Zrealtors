@@ -33,11 +33,12 @@
   </p-menubar>
   <button
     (click)="toggleLanguage()"
-    class="flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 shadow-md ltr:ml-4 rtl:mr-4"
+    class="flex items-center bg-white/10 hover:bg-white/20 text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 shadow-md ms-4"
     aria-label="Toggle Language"
   >
-    <span class="text-sm">
-      {{ currentLang === "en" ? "العربية" : "English" }}
+    <span >
+      {{ currentLang === "en" ? "عربى" : "English" }}
+      <i class="fa-solid fa-globe"></i>
     </span>
   </button>
 
@@ -57,7 +58,7 @@
           (click)="selectedText = 'Find a Property'"
         >
           <i class="pi pi-home"></i>
-          <p class="ltr:ml-2 rtl:mr-2">
+          <p class="ms-2">
             {{ "home.header.propertyTabs.findProperty" | translate }}
           </p>
         </div>
@@ -72,7 +73,7 @@
           (click)="selectedText = 'Make a Request'"
         >
           <i class="pi pi-home"></i>
-          <p class="ltr:ml-2 rtl:mr-2">
+          <p class="ms-2">
             {{ "home.header.propertyTabs.makeRequest" | translate }}
           </p>
         </div>
@@ -93,7 +94,7 @@
             class="bord"
           />
           <label for="in_label"
-            ><i class="pi pi-map-marker ltr:mr-1 rtl:ml-1"></i
+            ><i class="pi pi-map-marker me-1"></i
             >{{ "home.header.filters.location" | translate }}</label
           >
         </p-floatlabel>
@@ -111,7 +112,7 @@
           />
 
           <label for="in_label"
-            ><i class="pi pi-home ltr:mr-1 rtl:ml-1"></i
+            ><i class="pi pi-home me-1"></i
             >{{ "home.header.filters.category" | translate }}</label
           >
         </p-floatlabel>
@@ -121,7 +122,7 @@
           (click)="toggle()"
         >
           <p class="text-blue-100 text-[22px] font-[600]">
-            <i class="pi pi-dollar ltr:mr-1 rtl:ml-1"></i
+            <i class="pi pi-dollar me-1"></i
             >{{ "home.header.filters.priceRange" | translate }}
           </p>
           <p class="text-gray mt-[5px]">
@@ -148,7 +149,7 @@
       class="range w-[460px] h-[108px] bg-white flex justify-center items-center rounded-b-lg absolute left-1/2 transform -translate-x-[50%]"
     >
       <div
-        class="bg-black block ltr:mr-4 rtl:ml-4 number bg-purple text-center p-[5px] rounded-lg"
+        class="bg-black block ms-4 number bg-purple text-center p-[5px] rounded-lg"
       >
         ${{ rangeValues[0] }}
       </div>
@@ -160,7 +161,7 @@
         min="0"
       ></p-slider>
       <div
-        class="bg-black block ltr:ml-4 rtl:mr-4 number bg-purple text-center p-[5px] rounded-lg"
+        class="bg-black block ms-4 number bg-purple text-center p-[5px] rounded-lg"
       >
         ${{ rangeValues[1] }}
       </div>

@@ -60,51 +60,32 @@ export class HeaderComponent {
     this.toggleRange = !this.toggleRange;
   }
   ngOnInit() {
-    this.updateMenuItems();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.updateMenuItems();
-    });
-    this.loadTranslations();
-
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.loadTranslations();
     });
   }
-  loadTranslations() {
-    this.translate
-      .get([
-        'home.header.cities.cairo',
-        'home.header.cities.newYork',
-        'home.header.cities.rome',
-        'home.header.cities.london',
-        'home.header.cities.istanbul',
-        'home.header.cities.paris',
-        'home.header.categories.category1',
-        'home.header.categories.category2',
-        'home.header.categories.category3',
-        'home.header.categories.category4',
-        'home.header.categories.category5',
-        'home.header.categories.category6',
-      ])
-      .subscribe((translations) => {
-        this.cities = [
-          { name: translations['home.header.cities.cairo'] },
-          { name: translations['home.header.cities.newYork'] },
-          { name: translations['home.header.cities.rome'] },
-          { name: translations['home.header.cities.london'] },
-          { name: translations['home.header.cities.istanbul'] },
-          { name: translations['home.header.cities.paris'] },
-        ];
 
-        this.categorys = [
-          { name: translations['home.header.categories.category1'] },
-          { name: translations['home.header.categories.category2'] },
-          { name: translations['home.header.categories.category3'] },
-          { name: translations['home.header.categories.category4'] },
-          { name: translations['home.header.categories.category5'] },
-          { name: translations['home.header.categories.category6'] },
-        ];
-      });
+  loadTranslations() {
+    this.cities = [
+      { name: this.translate.instant('home.header.cities.cairo') },
+      { name: this.translate.instant('home.header.cities.newYork') },
+      { name: this.translate.instant('home.header.cities.rome') },
+      { name: this.translate.instant('home.header.cities.london') },
+      { name: this.translate.instant('home.header.cities.istanbul') },
+      { name: this.translate.instant('home.header.cities.paris') },
+    ];
+
+    this.categorys = [
+      { name: this.translate.instant('home.header.categories.category1') },
+      { name: this.translate.instant('home.header.categories.category2') },
+      { name: this.translate.instant('home.header.categories.category3') },
+      { name: this.translate.instant('home.header.categories.category4') },
+      { name: this.translate.instant('home.header.categories.category5') },
+      { name: this.translate.instant('home.header.categories.category6') },
+    ];
+    console.log('Current Lang:', this.translate.currentLang);
+    console.log('Current Lang:');
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -112,34 +93,21 @@ export class HeaderComponent {
   }
 
   updateMenuItems() {
-    this.translate
-      .get([
-        'home.header.menu.home',
-        'home.header.menu.about',
-        'home.header.menu.properties',
-        'home.header.menu.projects',
-        'home.header.menu.loyalty',
-        'home.header.menu.partners',
-        'home.header.menu.contact',
-        'home.header.menu.login',
-      ])
-      .subscribe((translations) => {
-        this.items = [
-          { label: translations['home.header.menu.home'] },
-          { label: translations['home.header.menu.about'] },
-          { label: translations['home.header.menu.properties'] },
-          { label: translations['home.header.menu.projects'] },
-          { label: translations['home.header.menu.loyalty'] },
-          { label: translations['home.header.menu.partners'] },
-          { label: translations['home.header.menu.contact'] },
-        ];
+    this.items = [
+      { label: this.translate.instant('home.header.menu.home') },
+      { label: this.translate.instant('home.header.menu.about') },
+      { label: this.translate.instant('home.header.menu.properties') },
+      { label: this.translate.instant('home.header.menu.projects') },
+      { label: this.translate.instant('home.header.menu.loyalty') },
+      { label: this.translate.instant('home.header.menu.partners') },
+      { label: this.translate.instant('home.header.menu.contact') },
+    ];
 
-        if (window.innerWidth < 960) {
-          this.items.push({
-            label: translations['home.header.menu.login'],
-            command: () => this.router.navigate(['/Sign-in']),
-          });
-        }
+    if (window.innerWidth < 960) {
+      this.items.push({
+        label: this.translate.instant('home.header.menu.login'),
+        command: () => this.router.navigate(['/Sign-in']),
       });
+    }
   }
 }

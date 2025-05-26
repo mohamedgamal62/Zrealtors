@@ -100,7 +100,7 @@
       "paragraph2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the simply standard dummy.",
       "button": "Read More"
     },
-    "featured-properties": {
+    "featured_properties": {
       "title": "Featured Properties",
       "description": "Lorem Ipsum is simply dummy text of the printing.",
       "viewAll": "View All",
