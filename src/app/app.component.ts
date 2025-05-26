@@ -1,7 +1,8 @@
+import { Language } from './shared/language.enum';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { Language } from './Modules/auth/enums/language.enum';
+import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,6 @@ export class AppComponent {
       this.isArabic = event.lang === Language.Ar;
     });
     this.translate.setDefaultLang(Language.En);
-    this.translate.use(Language.En); 
+    this.translate.use(Language.En);
   }
 }
