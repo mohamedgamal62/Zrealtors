@@ -40,7 +40,7 @@ main {
             background-color: white !important;
           }
           .p-select.bord {
-            border-right: 1px solid $border;
+            border-inline-end: 1px solid $border;
           }
           .p-select-label {
             margin-top: 13px;
@@ -72,13 +72,14 @@ main {
       }
       .p-iconwrapper {
         position: absolute !important;
-        top: 5px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
       }
       .p-menubar-mobile {
         display: block;
       }
       .p-menubar-button {
-        margin-left: auto;
+        margin-inline-start: auto;
       }
       .p-menubar-root-list {
         background-color: #666666 !important;
@@ -107,7 +108,7 @@ main {
           }
           .p-select.bord {
             border-bottom: 1px solid #eeeeee !important;
-            border-right: none !important;
+            border-inline-end: none !important;
           }
           .p-select-label.p-placeholder {
             margin-bottom: 16px;
@@ -133,7 +134,7 @@ main {
     .select-none {
       width: 100%;
       .pi-angle-down {
-        right: 24px;
+        inset-inline-end: 24px;
       }
     }
   }

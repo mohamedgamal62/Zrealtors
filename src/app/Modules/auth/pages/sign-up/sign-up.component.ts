@@ -2,6 +2,7 @@ import { UsersService } from '../../services/users.service';
 import { Component, inject, ViewEncapsulation } from '@angular/core';
 import {
   AbstractControl,
+  FormBuilder,
   FormControl,
   FormGroup,
   Validators,
@@ -13,6 +14,8 @@ import { ButtonModule } from 'primeng/button';
 import { Dialog } from 'primeng/dialog';
 import { Toast } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+
 function checkPasswords(controlName1: string, controlName2: string) {
   return (control: AbstractControl) => {
     let val1 = control.get(controlName1)?.value;
@@ -33,7 +36,9 @@ function checkPasswords(controlName1: string, controlName2: string) {
     ButtonModule,
     Dialog,
     Toast,
+    TranslateModule,
   ],
+
   templateUrl: './sign-up.component.html',
   encapsulation: ViewEncapsulation.None,
   providers: [MessageService],
@@ -82,7 +87,7 @@ export class SignUpComponent {
   });
   usersService = inject(UsersService);
   visible: boolean = false;
-
+  constructor(private fb: FormBuilder, private translate: TranslateService) {}
   invaildName = true;
   router = inject(Router);
   messageService = inject(MessageService);
@@ -101,26 +106,34 @@ export class SignUpComponent {
   signUp() {
     const mobileValue = this.form.controls.mobile.value;
     if (this.isMobileRegistered(mobileValue)) {
-      this.showErrorInToaster('You already have an account with this number');
+      this.translate
+        .get('signup.messages.mobile_already_registered')
+        .subscribe((res: string) => {
+          this.showErrorInToaster(res);
+        });
       return;
     }
     if (this.form.valid) {
       this.registerUser();
       this.visible = true;
     } else {
-      this.showErrorInToaster('Invalid form , Please check your input data');
+      this.translate
+        .get('signup.messages.invalid_form')
+        .subscribe((res: string) => {
+          this.showErrorInToaster(res);
+        });
     }
   }
-  GoToHomePage() {
+  goToHomePage() {
     this.router.navigate(['/']);
   }
-  showErrorInToaster(errorMassege: string) {
+  showErrorInToaster(errorMessage: string) {
     this.messageService.add({
       severity: 'error',
-      summary: 'Error',
-      detail: errorMassege,
+      summary: this.translate.instant('signup.messages.error'),
+      detail: errorMessage,
       life: 3000,
     });
   }
+
 }
-('  Invalid form , Please check your input data');

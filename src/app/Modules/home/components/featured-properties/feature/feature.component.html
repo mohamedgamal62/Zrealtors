@@ -7,7 +7,7 @@
       <p
         class="rounded-[4px] bg-gold text-[white] pt-[4px] pb-[4px] pr-[12px] pl-[12px] mt-[10px] cursor-pointer"
       >
-        {{ feature().type }}
+        {{ feature().type | translate }}
       </p>
 
       <i
@@ -15,11 +15,13 @@
       ></i>
     </div>
     <div class="font-inter mt-[20px] font-semibold text-[20px] text-blue-100">
-      {{ feature().name }}
+      {{ feature().name | translate }}
     </div>
     <div class="text-gray-100 font-inter font-[14px] mt-[10px]">
       <i class="pi pi-map-marker"></i>
-      <p class="inline ml-[8px]">{{ feature().loc }}</p>
+      <p class="inline ml-[8px]">
+        {{ feature().loc | translate }}
+      </p>
     </div>
     <div
       class="font-inter text-gray-100 text-[14px] flex gap-[16px] font-normal mt-[20px] leading-[16px]"
@@ -38,7 +40,9 @@
             fill="#47566D"
           />
         </svg>
-        <p class="inline ml-[4px]">{{ feature().beds }}</p>
+        <p class="inline ms-[4px]">
+          {{ feature().beds | translate }}
+        </p>
       </div>
       <div class="">
         <svg
@@ -74,7 +78,9 @@
             fill="#47566D"
           />
         </svg>
-        <p class="inline ml-[4px]">{{ feature().baths }}</p>
+        <p class="inline ms-[4px]">
+          {{ feature().baths | translate }}
+        </p>
       </div>
       <div class="">
         <svg
@@ -99,7 +105,9 @@
             </clipPath>
           </defs>
         </svg>
-        <p class="inline ml-[4px]">{{ feature().sqft }}</p>
+        <p class="inline ms-[4px]">
+          {{ feature().sqft | translate }}
+        </p>
       </div>
     </div>
     <div class="flex gap-[12px] font-inter mt-[20px]">
@@ -112,11 +120,11 @@
         {{ feature().dis }}
       </p>
     </div>
-    <div class="font-inter text-right text-white mt-[7px] view">
+    <div class="font-inter text-end text-white mt-[7px] view">
       <a
         href=""
         class="bg-purple pl-[20px] pr-[19px] pt-[12px] pb-[12px] rounded-[8px]"
-        >View Details</a
+        >{{ "home.featured_properties.feature.button" | translate }}</a
       >
     </div>
   </div>
