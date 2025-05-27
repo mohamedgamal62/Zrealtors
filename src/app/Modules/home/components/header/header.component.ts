@@ -18,6 +18,8 @@ import {
   TranslateModule,
   TranslateService,
 } from '@ngx-translate/core';
+import { Language } from '../../../../shared/translation/language.enum';
+
 interface name {
   name: string;
 }
@@ -50,10 +52,11 @@ export class HeaderComponent {
   toggleRange = false;
   router = inject(Router);
   translate = inject(TranslateService);
-  currentLang = 'en';
+  currentLang: Language = Language.En;
 
   toggleLanguage() {
-    this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
+    this.currentLang =
+      this.currentLang === Language.En ? Language.Ar : Language.En;
     this.translate.use(this.currentLang);
   }
   toggle() {
@@ -84,8 +87,6 @@ export class HeaderComponent {
       { name: this.translate.instant('home.header.categories.category5') },
       { name: this.translate.instant('home.header.categories.category6') },
     ];
-    console.log('Current Lang:', this.translate.currentLang);
-    console.log('Current Lang:');
   }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {

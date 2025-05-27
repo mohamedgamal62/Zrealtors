@@ -40,7 +40,9 @@
             fill="#47566D"
           />
         </svg>
-        <p class="inline ltr:ml-[4px] rtl:mr-[4px]">{{ feature().beds | translate }}</p>
+        <p class="inline ms-[4px]">
+          {{ feature().beds | translate }}
+        </p>
       </div>
       <div class="">
         <svg
@@ -76,7 +78,9 @@
             fill="#47566D"
           />
         </svg>
-        <p class="inline ltr:ml-[4px] rtl:mr-[4px]">{{ feature().baths | translate }}</p>
+        <p class="inline ms-[4px]">
+          {{ feature().baths | translate }}
+        </p>
       </div>
       <div class="">
         <svg
@@ -101,7 +105,9 @@
             </clipPath>
           </defs>
         </svg>
-        <p class="inline ltr:ml-[4px] rtl:mr-[4px]">{{ feature().sqft | translate }}</p>
+        <p class="inline ms-[4px]">
+          {{ feature().sqft | translate }}
+        </p>
       </div>
     </div>
     <div class="flex gap-[12px] font-inter mt-[20px]">
@@ -114,7 +120,7 @@
         {{ feature().dis }}
       </p>
     </div>
-    <div class="font-inter ltr:text-right rtl:text-left text-white mt-[7px] view">
+    <div class="font-inter text-end text-white mt-[7px] view">
       <a
         href=""
         class="bg-purple pl-[20px] pr-[19px] pt-[12px] pb-[12px] rounded-[8px]"

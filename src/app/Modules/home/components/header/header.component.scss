@@ -40,7 +40,7 @@ main {
             background-color: white !important;
           }
           .p-select.bord {
-            border-right: 1px solid $border;
+            border-inline-end: 1px solid $border;
           }
           .p-select-label {
             margin-top: 13px;
@@ -108,7 +108,7 @@ main {
           }
           .p-select.bord {
             border-bottom: 1px solid #eeeeee !important;
-            border-right: none !important;
+            border-inline-end: none !important;
           }
           .p-select-label.p-placeholder {
             margin-bottom: 16px;
@@ -134,7 +134,7 @@ main {
     .select-none {
       width: 100%;
       .pi-angle-down {
-        right: 24px;
+        inset-inline-end: 24px;
       }
     }
   }
@@ -153,20 +153,5 @@ main {
   main .p-menubar-root-list {
     margin-left: 89px !important;
     margin-right: 215px !important;
-  }
-}
-.rtl {
-  @media (max-width: 960px) {
-    .select-none .pi-angle-down {
-      left: 19px;
-      right: auto;
-    }
-  }
-
-  @media (min-width: 960px) {
-    main .find-property .category .cover-select .p-floatlabel .p-select.bord {
-      border-left: 1px solid #eeeeee !important;
-      border-right: none !important;
-    }
   }
 }
